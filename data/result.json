@@ -1,0 +1,1740 @@
+[{
+    "type": "up",
+    "probability": 0.625,
+    "all": 312,
+    "val": [
+        [0, 0, 0],
+        [
+            [2, 1]
+        ]
+    ],
+    "daysAhead": 4,
+    "index": 216,
+    "commulation": 9.865260492906744
+}, {
+    "type": "up",
+    "probability": 0.6342412451361867,
+    "all": 257,
+    "val": [
+        [0, 0, 0],
+        [
+            [2, 0]
+        ]
+    ],
+    "daysAhead": 4,
+    "index": 81,
+    "commulation": 6.5075267670527195
+}, {
+    "type": "up",
+    "probability": 0.7837837837837838,
+    "all": 74,
+    "val": [
+        [0, 0, -1],
+        [
+            [0, 2]
+        ]
+    ],
+    "daysAhead": 2,
+    "index": 63,
+    "commulation": 6.307910728835996
+}, {
+    "type": "up",
+    "probability": 0.7837837837837838,
+    "all": 74,
+    "val": [
+        [0, 0, -1],
+        [
+            [0, 1],
+            [0, 2]
+        ]
+    ],
+    "daysAhead": 2,
+    "index": 117,
+    "commulation": 6.307910728835996
+}, {
+    "type": "up",
+    "probability": 0.7837837837837838,
+    "all": 74,
+    "val": [
+        [0, 0, -1],
+        [
+            [0, 1]
+        ]
+    ],
+    "daysAhead": 2,
+    "index": 9,
+    "commulation": 6.307910728835996
+}, {
+    "type": "up",
+    "probability": 0.7837837837837838,
+    "all": 74,
+    "val": [
+        [0, 0, -1],
+        [
+            [1, 2]
+        ]
+    ],
+    "daysAhead": 2,
+    "index": 198,
+    "commulation": 6.307910728835996
+}, {
+    "type": "up",
+    "probability": 0.7837837837837838,
+    "all": 74,
+    "val": [
+        [0, 0, -1],
+        [
+            [0, 2],
+            [1, 2]
+        ]
+    ],
+    "daysAhead": 2,
+    "index": 333,
+    "commulation": 6.307910728835996
+}, {
+    "type": "up",
+    "probability": 0.7837837837837838,
+    "all": 74,
+    "val": [
+        [0, 0, -1],
+        [
+            [0, 1],
+            [1, 2]
+        ]
+    ],
+    "daysAhead": 2,
+    "index": 252,
+    "commulation": 6.307910728835996
+}, {
+    "type": "up",
+    "probability": 0.7837837837837838,
+    "all": 74,
+    "val": [
+        [0, 0, -1],
+        [
+            [0, 1],
+            [0, 2],
+            [1, 2]
+        ]
+    ],
+    "daysAhead": 2,
+    "index": 414,
+    "commulation": 6.307910728835996
+}, {
+    "type": "up",
+    "probability": 0.5993589743589743,
+    "all": 312,
+    "val": [
+        [0, 0, 0],
+        [
+            [2, 1]
+        ]
+    ],
+    "daysAhead": 3,
+    "index": 216,
+    "commulation": 5.895465935768322
+}, {
+    "type": "up",
+    "probability": 0.7432432432432432,
+    "all": 74,
+    "val": [
+        [0, 0, -1],
+        [
+            [0, 1],
+            [0, 2]
+        ]
+    ],
+    "daysAhead": 3,
+    "index": 117,
+    "commulation": 5.894576741481975
+}, {
+    "type": "up",
+    "probability": 0.7432432432432432,
+    "all": 74,
+    "val": [
+        [0, 0, -1],
+        [
+            [0, 2]
+        ]
+    ],
+    "daysAhead": 3,
+    "index": 63,
+    "commulation": 5.894576741481975
+}, {
+    "type": "up",
+    "probability": 0.7432432432432432,
+    "all": 74,
+    "val": [
+        [0, 0, -1],
+        [
+            [0, 1],
+            [1, 2]
+        ]
+    ],
+    "daysAhead": 3,
+    "index": 252,
+    "commulation": 5.894576741481975
+}, {
+    "type": "up",
+    "probability": 0.7432432432432432,
+    "all": 74,
+    "val": [
+        [0, 0, -1],
+        [
+            [0, 1],
+            [0, 2],
+            [1, 2]
+        ]
+    ],
+    "daysAhead": 3,
+    "index": 414,
+    "commulation": 5.894576741481975
+}, {
+    "type": "up",
+    "probability": 0.7432432432432432,
+    "all": 74,
+    "val": [
+        [0, 0, -1],
+        [
+            [0, 1]
+        ]
+    ],
+    "daysAhead": 3,
+    "index": 9,
+    "commulation": 5.894576741481975
+}, {
+    "type": "up",
+    "probability": 0.7432432432432432,
+    "all": 74,
+    "val": [
+        [0, 0, -1],
+        [
+            [1, 2]
+        ]
+    ],
+    "daysAhead": 3,
+    "index": 198,
+    "commulation": 5.894576741481975
+}, {
+    "type": "up",
+    "probability": 0.7432432432432432,
+    "all": 74,
+    "val": [
+        [0, 0, -1],
+        [
+            [0, 2],
+            [1, 2]
+        ]
+    ],
+    "daysAhead": 3,
+    "index": 333,
+    "commulation": 5.894576741481975
+}, {
+    "type": "up",
+    "probability": 0.6296296296296297,
+    "all": 189,
+    "val": [
+        [0, 0, 0],
+        [
+            [0, 1],
+            [2, 1]
+        ]
+    ],
+    "daysAhead": 4,
+    "index": 297,
+    "commulation": 5.45328013957121
+}, {
+    "type": "up",
+    "probability": 0.7027027027027027,
+    "all": 74,
+    "val": [
+        [0, 0, -1],
+        [
+            [0, 2],
+            [1, 2]
+        ]
+    ],
+    "daysAhead": 4,
+    "index": 333,
+    "commulation": 4.985151394382084
+}, {
+    "type": "up",
+    "probability": 0.7027027027027027,
+    "all": 74,
+    "val": [
+        [0, 0, -1],
+        [
+            [0, 1]
+        ]
+    ],
+    "daysAhead": 4,
+    "index": 9,
+    "commulation": 4.985151394382084
+}, {
+    "type": "up",
+    "probability": 0.7027027027027027,
+    "all": 74,
+    "val": [
+        [0, 0, -1],
+        [
+            [0, 1],
+            [0, 2]
+        ]
+    ],
+    "daysAhead": 4,
+    "index": 117,
+    "commulation": 4.985151394382084
+}, {
+    "type": "up",
+    "probability": 0.7027027027027027,
+    "all": 74,
+    "val": [
+        [0, 0, -1],
+        [
+            [0, 2]
+        ]
+    ],
+    "daysAhead": 4,
+    "index": 63,
+    "commulation": 4.985151394382084
+}, {
+    "type": "up",
+    "probability": 0.7027027027027027,
+    "all": 74,
+    "val": [
+        [0, 0, -1],
+        [
+            [1, 2]
+        ]
+    ],
+    "daysAhead": 4,
+    "index": 198,
+    "commulation": 4.985151394382084
+}, {
+    "type": "up",
+    "probability": 0.7027027027027027,
+    "all": 74,
+    "val": [
+        [0, 0, -1],
+        [
+            [0, 1],
+            [0, 2],
+            [1, 2]
+        ]
+    ],
+    "daysAhead": 4,
+    "index": 414,
+    "commulation": 4.985151394382084
+}, {
+    "type": "up",
+    "probability": 0.7027027027027027,
+    "all": 74,
+    "val": [
+        [0, 0, -1],
+        [
+            [0, 1],
+            [1, 2]
+        ]
+    ],
+    "daysAhead": 4,
+    "index": 252,
+    "commulation": 4.985151394382084
+}, {
+    "type": "up",
+    "probability": 0.6349206349206349,
+    "all": 189,
+    "val": [
+        [0, 0, 0],
+        [
+            [0, 1],
+            [2, 1]
+        ]
+    ],
+    "daysAhead": 3,
+    "index": 297,
+    "commulation": 4.49064671742295
+}, {
+    "type": "up",
+    "probability": 0.5705128205128205,
+    "all": 312,
+    "val": [
+        [0, 0, 0],
+        [
+            [2, 1]
+        ]
+    ],
+    "daysAhead": 2,
+    "index": 216,
+    "commulation": 4.299971176371105
+}, {
+    "type": "up",
+    "probability": 1,
+    "all": 74,
+    "val": [
+        [0, 0, -1],
+        [
+            [0, 1],
+            [1, 2]
+        ]
+    ],
+    "daysAhead": 1,
+    "index": 252,
+    "commulation": 4.237505934258864
+}, {
+    "type": "up",
+    "probability": 1,
+    "all": 74,
+    "val": [
+        [0, 0, -1],
+        [
+            [1, 2]
+        ]
+    ],
+    "daysAhead": 1,
+    "index": 198,
+    "commulation": 4.237505934258864
+}, {
+    "type": "up",
+    "probability": 1,
+    "all": 74,
+    "val": [
+        [0, 0, -1],
+        [
+            [0, 1],
+            [0, 2]
+        ]
+    ],
+    "daysAhead": 1,
+    "index": 117,
+    "commulation": 4.237505934258864
+}, {
+    "type": "up",
+    "probability": 1,
+    "all": 74,
+    "val": [
+        [0, 0, -1],
+        [
+            [0, 1],
+            [0, 2],
+            [1, 2]
+        ]
+    ],
+    "daysAhead": 1,
+    "index": 414,
+    "commulation": 4.237505934258864
+}, {
+    "type": "up",
+    "probability": 1,
+    "all": 74,
+    "val": [
+        [0, 0, -1],
+        [
+            [0, 2],
+            [1, 2]
+        ]
+    ],
+    "daysAhead": 1,
+    "index": 333,
+    "commulation": 4.237505934258864
+}, {
+    "type": "up",
+    "probability": 1,
+    "all": 74,
+    "val": [
+        [0, 0, -1],
+        [
+            [0, 2]
+        ]
+    ],
+    "daysAhead": 1,
+    "index": 63,
+    "commulation": 4.237505934258864
+}, {
+    "type": "up",
+    "probability": 1,
+    "all": 74,
+    "val": [
+        [0, 0, -1],
+        [
+            [0, 1]
+        ]
+    ],
+    "daysAhead": 1,
+    "index": 9,
+    "commulation": 4.237505934258864
+}, {
+    "type": "up",
+    "probability": 0.5992217898832685,
+    "all": 257,
+    "val": [
+        [0, 0, 0],
+        [
+            [2, 0]
+        ]
+    ],
+    "daysAhead": 3,
+    "index": 81,
+    "commulation": 4.184200353693932
+}, {
+    "type": "up",
+    "probability": 0.5782747603833865,
+    "all": 313,
+    "val": [
+        [0, 0, 0],
+        [
+            [1, 0]
+        ]
+    ],
+    "daysAhead": 4,
+    "index": 27,
+    "commulation": 4.022025342840203
+}, {
+    "type": "down",
+    "probability": 1,
+    "all": 94,
+    "val": [
+        [0, 0, 1],
+        [
+            [2, 0]
+        ]
+    ],
+    "daysAhead": 1,
+    "index": 99,
+    "commulation": 3.9584131213700506
+}, {
+    "type": "down",
+    "probability": 1,
+    "all": 94,
+    "val": [
+        [0, 0, 1],
+        [
+            [1, 0]
+        ]
+    ],
+    "daysAhead": 1,
+    "index": 45,
+    "commulation": 3.9584131213700506
+}, {
+    "type": "down",
+    "probability": 1,
+    "all": 94,
+    "val": [
+        [0, 0, 1],
+        [
+            [2, 1]
+        ]
+    ],
+    "daysAhead": 1,
+    "index": 234,
+    "commulation": 3.9584131213700506
+}, {
+    "type": "down",
+    "probability": 0.7773972602739726,
+    "all": 292,
+    "val": [
+        [0, 0, 0],
+        [
+            [1, 2]
+        ]
+    ],
+    "daysAhead": 1,
+    "index": 189,
+    "commulation": 3.9088224106964002
+}, {
+    "type": "up",
+    "probability": 0.6492537313432836,
+    "all": 134,
+    "val": [
+        [0, 0, 0],
+        [
+            [0, 1],
+            [2, 0]
+        ]
+    ],
+    "daysAhead": 4,
+    "index": 162,
+    "commulation": 3.597205213386159
+}, {
+    "type": "up",
+    "probability": 0.6031746031746031,
+    "all": 189,
+    "val": [
+        [0, 0, 0],
+        [
+            [0, 1],
+            [2, 1]
+        ]
+    ],
+    "daysAhead": 2,
+    "index": 297,
+    "commulation": 3.582172834338968
+}, {
+    "type": "up",
+    "probability": 0.5836575875486382,
+    "all": 257,
+    "val": [
+        [0, 0, 0],
+        [
+            [2, 0]
+        ]
+    ],
+    "daysAhead": 2,
+    "index": 81,
+    "commulation": 3.5707046470899577
+}, {
+    "type": "up",
+    "probability": 0.5416666666666666,
+    "all": 312,
+    "val": [
+        [0, 0, 0],
+        [
+            [2, 1]
+        ]
+    ],
+    "daysAhead": 1,
+    "index": 216,
+    "commulation": 3.348720860093875
+}, {
+    "type": "up",
+    "probability": 0.5797665369649806,
+    "all": 257,
+    "val": [
+        [0, 0, 0],
+        [
+            [2, 0]
+        ]
+    ],
+    "daysAhead": 1,
+    "index": 81,
+    "commulation": 3.270314860299768
+}, {
+    "type": "down",
+    "probability": 0.7872340425531915,
+    "all": 94,
+    "val": [
+        [0, 0, 1],
+        [
+            [2, 0]
+        ]
+    ],
+    "daysAhead": 2,
+    "index": 99,
+    "commulation": 3.215692619034551
+}, {
+    "type": "down",
+    "probability": 0.7872340425531915,
+    "all": 94,
+    "val": [
+        [0, 0, 1],
+        [
+            [2, 1]
+        ]
+    ],
+    "daysAhead": 2,
+    "index": 234,
+    "commulation": 3.215692619034551
+}, {
+    "type": "down",
+    "probability": 0.7872340425531915,
+    "all": 94,
+    "val": [
+        [0, 0, 1],
+        [
+            [1, 0]
+        ]
+    ],
+    "daysAhead": 2,
+    "index": 45,
+    "commulation": 3.215692619034551
+}, {
+    "type": "up",
+    "probability": 0.6492537313432836,
+    "all": 134,
+    "val": [
+        [0, 0, 0],
+        [
+            [0, 1],
+            [2, 0]
+        ]
+    ],
+    "daysAhead": 3,
+    "index": 162,
+    "commulation": 3.187155313604022
+}, {
+    "type": "up",
+    "probability": 0.6111111111111112,
+    "all": 126,
+    "val": [
+        [0, 0, 0],
+        [
+            [0, 2],
+            [2, 1]
+        ]
+    ],
+    "daysAhead": 4,
+    "index": 378,
+    "commulation": 3.0078313237690257
+}, {
+    "type": "up",
+    "probability": 0.6111111111111112,
+    "all": 126,
+    "val": [
+        [0, 0, 0],
+        [
+            [0, 1],
+            [0, 2],
+            [2, 1]
+        ]
+    ],
+    "daysAhead": 4,
+    "index": 486,
+    "commulation": 3.0078313237690257
+}, {
+    "type": "up",
+    "probability": 0.6417910447761194,
+    "all": 134,
+    "val": [
+        [0, 0, 0],
+        [
+            [0, 1],
+            [2, 0]
+        ]
+    ],
+    "daysAhead": 2,
+    "index": 162,
+    "commulation": 2.974643471226287
+}, {
+    "type": "up",
+    "probability": 0.5527156549520766,
+    "all": 313,
+    "val": [
+        [0, 0, 0],
+        [
+            [1, 0]
+        ]
+    ],
+    "daysAhead": 3,
+    "index": 27,
+    "commulation": 2.622209826080169
+}, {
+    "type": "down",
+    "probability": 0.7975708502024291,
+    "all": 247,
+    "val": [
+        [0, 0, 0],
+        [
+            [0, 2],
+            [1, 2]
+        ]
+    ],
+    "daysAhead": 1,
+    "index": 324,
+    "commulation": 2.6069493165242563
+}, {
+    "type": "down",
+    "probability": 0.7975708502024291,
+    "all": 247,
+    "val": [
+        [0, 0, 0],
+        [
+            [0, 1],
+            [1, 2]
+        ]
+    ],
+    "daysAhead": 1,
+    "index": 243,
+    "commulation": 2.6069493165242563
+}, {
+    "type": "down",
+    "probability": 0.7975708502024291,
+    "all": 247,
+    "val": [
+        [0, 0, 0],
+        [
+            [0, 1],
+            [0, 2],
+            [1, 2]
+        ]
+    ],
+    "daysAhead": 1,
+    "index": 405,
+    "commulation": 2.6069493165242563
+}, {
+    "type": "down",
+    "probability": 0.7975708502024291,
+    "all": 247,
+    "val": [
+        [0, 0, 0],
+        [
+            [0, 1],
+            [0, 2]
+        ]
+    ],
+    "daysAhead": 1,
+    "index": 108,
+    "commulation": 2.6069493165242563
+}, {
+    "type": "down",
+    "probability": 0.7975708502024291,
+    "all": 247,
+    "val": [
+        [0, 0, 0],
+        [
+            [0, 2]
+        ]
+    ],
+    "daysAhead": 1,
+    "index": 54,
+    "commulation": 2.6069493165242563
+}, {
+    "type": "up",
+    "probability": 0.6470588235294118,
+    "all": 51,
+    "val": [
+        [1, -1, 0],
+        [
+            [0, 1]
+        ]
+    ],
+    "daysAhead": 4,
+    "index": 5,
+    "commulation": 2.5117584321729947
+}, {
+    "type": "up",
+    "probability": 0.6470588235294118,
+    "all": 51,
+    "val": [
+        [1, -1, 0],
+        [
+            [2, 1]
+        ]
+    ],
+    "daysAhead": 4,
+    "index": 221,
+    "commulation": 2.5117584321729947
+}, {
+    "type": "up",
+    "probability": 0.6470588235294118,
+    "all": 51,
+    "val": [
+        [1, -1, 0],
+        [
+            [0, 1],
+            [2, 1]
+        ]
+    ],
+    "daysAhead": 4,
+    "index": 302,
+    "commulation": 2.5117584321729947
+}, {
+    "type": "down",
+    "probability": 0.7446808510638298,
+    "all": 94,
+    "val": [
+        [0, 0, 1],
+        [
+            [2, 1]
+        ]
+    ],
+    "daysAhead": 3,
+    "index": 234,
+    "commulation": 2.4854734799953735
+}, {
+    "type": "down",
+    "probability": 0.7446808510638298,
+    "all": 94,
+    "val": [
+        [0, 0, 1],
+        [
+            [2, 0]
+        ]
+    ],
+    "daysAhead": 3,
+    "index": 99,
+    "commulation": 2.4854734799953735
+}, {
+    "type": "down",
+    "probability": 0.7446808510638298,
+    "all": 94,
+    "val": [
+        [0, 0, 1],
+        [
+            [1, 0]
+        ]
+    ],
+    "daysAhead": 3,
+    "index": 45,
+    "commulation": 2.4854734799953735
+}, {
+    "type": "down",
+    "probability": 0.6027397260273972,
+    "all": 292,
+    "val": [
+        [0, 0, 0],
+        [
+            [1, 2]
+        ]
+    ],
+    "daysAhead": 2,
+    "index": 189,
+    "commulation": 2.4851302068743624
+}, {
+    "type": "up",
+    "probability": 0.5277777777777778,
+    "all": 72,
+    "val": [
+        [0, -1, 0],
+        [
+            [2, 1]
+        ]
+    ],
+    "daysAhead": 2,
+    "index": 219,
+    "commulation": 2.4765415635068564
+}, {
+    "type": "up",
+    "probability": 0.5277777777777778,
+    "all": 72,
+    "val": [
+        [0, -1, 0],
+        [
+            [0, 1]
+        ]
+    ],
+    "daysAhead": 2,
+    "index": 3,
+    "commulation": 2.4765415635068564
+}, {
+    "type": "up",
+    "probability": 0.5277777777777778,
+    "all": 72,
+    "val": [
+        [0, -1, 0],
+        [
+            [0, 1],
+            [2, 1]
+        ]
+    ],
+    "daysAhead": 2,
+    "index": 300,
+    "commulation": 2.4765415635068564
+}, {
+    "type": "up",
+    "probability": 0.6349206349206349,
+    "all": 126,
+    "val": [
+        [0, 0, 0],
+        [
+            [0, 1],
+            [0, 2],
+            [2, 1]
+        ]
+    ],
+    "daysAhead": 3,
+    "index": 486,
+    "commulation": 2.4762357554477186
+}, {
+    "type": "up",
+    "probability": 0.6349206349206349,
+    "all": 126,
+    "val": [
+        [0, 0, 0],
+        [
+            [0, 2],
+            [2, 1]
+        ]
+    ],
+    "daysAhead": 3,
+    "index": 378,
+    "commulation": 2.4762357554477186
+}, {
+    "type": "up",
+    "probability": 0.6666666666666666,
+    "all": 72,
+    "val": [
+        [0, -1, 0],
+        [
+            [0, 1],
+            [2, 1]
+        ]
+    ],
+    "daysAhead": 1,
+    "index": 300,
+    "commulation": 2.3789094431365165
+}, {
+    "type": "up",
+    "probability": 0.6666666666666666,
+    "all": 72,
+    "val": [
+        [0, -1, 0],
+        [
+            [0, 1]
+        ]
+    ],
+    "daysAhead": 1,
+    "index": 3,
+    "commulation": 2.3789094431365165
+}, {
+    "type": "up",
+    "probability": 0.6666666666666666,
+    "all": 72,
+    "val": [
+        [0, -1, 0],
+        [
+            [2, 1]
+        ]
+    ],
+    "daysAhead": 1,
+    "index": 219,
+    "commulation": 2.3789094431365165
+}, {
+    "type": "up",
+    "probability": 0.5660377358490566,
+    "all": 53,
+    "val": [
+        [0, -1, 0],
+        [
+            [2, 0]
+        ]
+    ],
+    "daysAhead": 2,
+    "index": 84,
+    "commulation": 2.2998631010214563
+}, {
+    "type": "up",
+    "probability": 0.5660377358490566,
+    "all": 53,
+    "val": [
+        [0, -1, 0],
+        [
+            [0, 1],
+            [2, 0]
+        ]
+    ],
+    "daysAhead": 2,
+    "index": 165,
+    "commulation": 2.2998631010214563
+}, {
+    "type": "up",
+    "probability": 0.5555555555555556,
+    "all": 72,
+    "val": [
+        [0, -1, 0],
+        [
+            [0, 1]
+        ]
+    ],
+    "daysAhead": 3,
+    "index": 3,
+    "commulation": 2.218230784724746
+}, {
+    "type": "up",
+    "probability": 0.5555555555555556,
+    "all": 72,
+    "val": [
+        [0, -1, 0],
+        [
+            [0, 1],
+            [2, 1]
+        ]
+    ],
+    "daysAhead": 3,
+    "index": 300,
+    "commulation": 2.218230784724746
+}, {
+    "type": "up",
+    "probability": 0.5555555555555556,
+    "all": 72,
+    "val": [
+        [0, -1, 0],
+        [
+            [2, 1]
+        ]
+    ],
+    "daysAhead": 3,
+    "index": 219,
+    "commulation": 2.218230784724746
+}, {
+    "type": "up",
+    "probability": 0.5443037974683544,
+    "all": 79,
+    "val": [
+        [-1, 0, 0],
+        [
+            [1, 0]
+        ]
+    ],
+    "daysAhead": 4,
+    "index": 28,
+    "commulation": 2.212018286099558
+}, {
+    "type": "up",
+    "probability": 0.5443037974683544,
+    "all": 79,
+    "val": [
+        [-1, 0, 0],
+        [
+            [2, 0]
+        ]
+    ],
+    "daysAhead": 4,
+    "index": 82,
+    "commulation": 2.212018286099558
+}, {
+    "type": "up",
+    "probability": 0.5443037974683544,
+    "all": 79,
+    "val": [
+        [-1, 0, 0],
+        [
+            [2, 1]
+        ]
+    ],
+    "daysAhead": 4,
+    "index": 217,
+    "commulation": 2.212018286099558
+}, {
+    "type": "up",
+    "probability": 0.6666666666666666,
+    "all": 63,
+    "val": [
+        [0, 1, -1],
+        [
+            [1, 0],
+            [1, 2]
+        ]
+    ],
+    "daysAhead": 4,
+    "index": 285,
+    "commulation": 2.201758875936842
+}, {
+    "type": "up",
+    "probability": 0.6666666666666666,
+    "all": 63,
+    "val": [
+        [0, 1, -1],
+        [
+            [1, 0]
+        ]
+    ],
+    "daysAhead": 4,
+    "index": 42,
+    "commulation": 2.201758875936842
+}, {
+    "type": "up",
+    "probability": 0.6666666666666666,
+    "all": 63,
+    "val": [
+        [0, 1, -1],
+        [
+            [1, 2]
+        ]
+    ],
+    "daysAhead": 4,
+    "index": 204,
+    "commulation": 2.201758875936842
+}, {
+    "type": "up",
+    "probability": 0.7936507936507936,
+    "all": 63,
+    "val": [
+        [0, 1, -1],
+        [
+            [1, 2]
+        ]
+    ],
+    "daysAhead": 2,
+    "index": 204,
+    "commulation": 2.1870193844566654
+}, {
+    "type": "up",
+    "probability": 0.7936507936507936,
+    "all": 63,
+    "val": [
+        [0, 1, -1],
+        [
+            [1, 0]
+        ]
+    ],
+    "daysAhead": 2,
+    "index": 42,
+    "commulation": 2.1870193844566654
+}, {
+    "type": "up",
+    "probability": 0.7936507936507936,
+    "all": 63,
+    "val": [
+        [0, 1, -1],
+        [
+            [1, 0],
+            [1, 2]
+        ]
+    ],
+    "daysAhead": 2,
+    "index": 285,
+    "commulation": 2.1870193844566654
+}, {
+    "type": "up",
+    "probability": 0.6037735849056604,
+    "all": 53,
+    "val": [
+        [0, -1, 0],
+        [
+            [0, 1],
+            [2, 0]
+        ]
+    ],
+    "daysAhead": 3,
+    "index": 165,
+    "commulation": 2.1580014191820758
+}, {
+    "type": "up",
+    "probability": 0.6037735849056604,
+    "all": 53,
+    "val": [
+        [0, -1, 0],
+        [
+            [2, 0]
+        ]
+    ],
+    "daysAhead": 3,
+    "index": 84,
+    "commulation": 2.1580014191820758
+}, {
+    "type": "up",
+    "probability": 0.476038338658147,
+    "all": 313,
+    "val": [
+        [0, 0, 0],
+        [
+            [1, 0]
+        ]
+    ],
+    "daysAhead": 1,
+    "index": 27,
+    "commulation": 2.147509316922657
+}, {
+    "type": "up",
+    "probability": 0.532258064516129,
+    "all": 310,
+    "val": [
+        [0, 0, 0],
+        [
+            [0, 1]
+        ]
+    ],
+    "daysAhead": 4,
+    "index": 0,
+    "commulation": 2.14093087820262
+}, {
+    "type": "up",
+    "probability": 0.569620253164557,
+    "all": 79,
+    "val": [
+        [-1, 0, 0],
+        [
+            [2, 1]
+        ]
+    ],
+    "daysAhead": 3,
+    "index": 217,
+    "commulation": 2.138721957300964
+}, {
+    "type": "up",
+    "probability": 0.569620253164557,
+    "all": 79,
+    "val": [
+        [-1, 0, 0],
+        [
+            [2, 0]
+        ]
+    ],
+    "daysAhead": 3,
+    "index": 82,
+    "commulation": 2.138721957300964
+}, {
+    "type": "up",
+    "probability": 0.569620253164557,
+    "all": 79,
+    "val": [
+        [-1, 0, 0],
+        [
+            [1, 0]
+        ]
+    ],
+    "daysAhead": 3,
+    "index": 28,
+    "commulation": 2.138721957300964
+}, {
+    "type": "up",
+    "probability": 0.4523809523809524,
+    "all": 42,
+    "val": [
+        [0, -1, 0],
+        [
+            [0, 1],
+            [0, 2],
+            [2, 1]
+        ]
+    ],
+    "daysAhead": 2,
+    "index": 489,
+    "commulation": 2.120940327584968
+}, {
+    "type": "up",
+    "probability": 0.4523809523809524,
+    "all": 42,
+    "val": [
+        [0, -1, 0],
+        [
+            [0, 2]
+        ]
+    ],
+    "daysAhead": 2,
+    "index": 57,
+    "commulation": 2.120940327584968
+}, {
+    "type": "up",
+    "probability": 0.4523809523809524,
+    "all": 42,
+    "val": [
+        [0, -1, 0],
+        [
+            [0, 1],
+            [0, 2]
+        ]
+    ],
+    "daysAhead": 2,
+    "index": 111,
+    "commulation": 2.120940327584968
+}, {
+    "type": "up",
+    "probability": 0.4523809523809524,
+    "all": 42,
+    "val": [
+        [0, -1, 0],
+        [
+            [0, 2],
+            [2, 1]
+        ]
+    ],
+    "daysAhead": 2,
+    "index": 381,
+    "commulation": 2.120940327584968
+}, {
+    "type": "up",
+    "probability": 0.6981132075471698,
+    "all": 53,
+    "val": [
+        [0, -1, 0],
+        [
+            [2, 0]
+        ]
+    ],
+    "daysAhead": 1,
+    "index": 84,
+    "commulation": 2.102421734779016
+}, {
+    "type": "up",
+    "probability": 0.6981132075471698,
+    "all": 53,
+    "val": [
+        [0, -1, 0],
+        [
+            [0, 1],
+            [2, 0]
+        ]
+    ],
+    "daysAhead": 1,
+    "index": 165,
+    "commulation": 2.102421734779016
+}, {
+    "type": "down",
+    "probability": 0.7659574468085106,
+    "all": 94,
+    "val": [
+        [0, 0, 1],
+        [
+            [2, 1]
+        ]
+    ],
+    "daysAhead": 4,
+    "index": 234,
+    "commulation": 2.099032780547893
+}, {
+    "type": "down",
+    "probability": 0.7659574468085106,
+    "all": 94,
+    "val": [
+        [0, 0, 1],
+        [
+            [1, 0]
+        ]
+    ],
+    "daysAhead": 4,
+    "index": 45,
+    "commulation": 2.099032780547893
+}, {
+    "type": "down",
+    "probability": 0.7659574468085106,
+    "all": 94,
+    "val": [
+        [0, 0, 1],
+        [
+            [2, 0]
+        ]
+    ],
+    "daysAhead": 4,
+    "index": 99,
+    "commulation": 2.099032780547893
+}, {
+    "type": "up",
+    "probability": 0.5132275132275133,
+    "all": 189,
+    "val": [
+        [0, 0, 0],
+        [
+            [0, 1],
+            [2, 1]
+        ]
+    ],
+    "daysAhead": 1,
+    "index": 297,
+    "commulation": 2.090719388714195
+}, {
+    "type": "up",
+    "probability": 1,
+    "all": 63,
+    "val": [
+        [0, 1, -1],
+        [
+            [1, 2]
+        ]
+    ],
+    "daysAhead": 1,
+    "index": 204,
+    "commulation": 2.0739796776329715
+}, {
+    "type": "up",
+    "probability": 1,
+    "all": 63,
+    "val": [
+        [0, 1, -1],
+        [
+            [1, 0],
+            [1, 2]
+        ]
+    ],
+    "daysAhead": 1,
+    "index": 285,
+    "commulation": 2.0739796776329715
+}, {
+    "type": "up",
+    "probability": 1,
+    "all": 63,
+    "val": [
+        [0, 1, -1],
+        [
+            [1, 0]
+        ]
+    ],
+    "daysAhead": 1,
+    "index": 42,
+    "commulation": 2.0739796776329715
+}, {
+    "type": "up",
+    "probability": 0.5746268656716418,
+    "all": 134,
+    "val": [
+        [0, 0, 0],
+        [
+            [0, 1],
+            [2, 0]
+        ]
+    ],
+    "daysAhead": 1,
+    "index": 162,
+    "commulation": 2.041767878328681
+}, {
+    "type": "down",
+    "probability": 0.7383720930232558,
+    "all": 172,
+    "val": [
+        [0, 0, 0],
+        [
+            [1, 0],
+            [1, 2]
+        ]
+    ],
+    "daysAhead": 1,
+    "index": 270,
+    "commulation": 2.000627772456214
+}, {
+    "type": "down",
+    "probability": 0.8863636363636364,
+    "all": 44,
+    "val": [
+        [-1, 0, 1],
+        [
+            [1, 0]
+        ]
+    ],
+    "daysAhead": 2,
+    "index": 46,
+    "commulation": 1.828330271016133
+}, {
+    "type": "down",
+    "probability": 0.8863636363636364,
+    "all": 44,
+    "val": [
+        [-1, 0, 1],
+        [
+            [2, 0]
+        ]
+    ],
+    "daysAhead": 2,
+    "index": 100,
+    "commulation": 1.828330271016133
+}, {
+    "type": "down",
+    "probability": 0.8863636363636364,
+    "all": 44,
+    "val": [
+        [-1, 0, 1],
+        [
+            [2, 1]
+        ]
+    ],
+    "daysAhead": 2,
+    "index": 235,
+    "commulation": 1.828330271016133
+}, {
+    "type": "down",
+    "probability": 1,
+    "all": 75,
+    "val": [
+        [0, 1, 0],
+        [
+            [1, 2]
+        ]
+    ],
+    "daysAhead": 1,
+    "index": 195,
+    "commulation": 1.7800125905363433
+}, {
+    "type": "down",
+    "probability": 1,
+    "all": 75,
+    "val": [
+        [0, 1, 0],
+        [
+            [1, 0],
+            [1, 2]
+        ]
+    ],
+    "daysAhead": 1,
+    "index": 276,
+    "commulation": 1.7800125905363433
+}, {
+    "type": "down",
+    "probability": 1,
+    "all": 75,
+    "val": [
+        [0, 1, 0],
+        [
+            [1, 0]
+        ]
+    ],
+    "daysAhead": 1,
+    "index": 33,
+    "commulation": 1.7800125905363433
+}, {
+    "type": "down",
+    "probability": 1,
+    "all": 44,
+    "val": [
+        [-1, 0, 1],
+        [
+            [2, 1]
+        ]
+    ],
+    "daysAhead": 1,
+    "index": 235,
+    "commulation": 1.7305712454872562
+}, {
+    "type": "down",
+    "probability": 1,
+    "all": 44,
+    "val": [
+        [-1, 0, 1],
+        [
+            [2, 0]
+        ]
+    ],
+    "daysAhead": 1,
+    "index": 100,
+    "commulation": 1.7305712454872562
+}, {
+    "type": "down",
+    "probability": 1,
+    "all": 44,
+    "val": [
+        [-1, 0, 1],
+        [
+            [1, 0]
+        ]
+    ],
+    "daysAhead": 1,
+    "index": 46,
+    "commulation": 1.7305712454872562
+}, {
+    "type": "up",
+    "probability": 1,
+    "all": 45,
+    "val": [
+        [0, 1, -1],
+        [
+            [2, 0],
+            [1, 2]
+        ]
+    ],
+    "daysAhead": 1,
+    "index": 366,
+    "commulation": 1.611568655626302
+}, {
+    "type": "up",
+    "probability": 1,
+    "all": 45,
+    "val": [
+        [0, 1, -1],
+        [
+            [2, 0]
+        ]
+    ],
+    "daysAhead": 1,
+    "index": 96,
+    "commulation": 1.611568655626302
+}, {
+    "type": "down",
+    "probability": 1,
+    "all": 47,
+    "val": [
+        [0, 1, 0],
+        [
+            [0, 2]
+        ]
+    ],
+    "daysAhead": 1,
+    "index": 60,
+    "commulation": 1.4370157314814909
+}, {
+    "type": "down",
+    "probability": 1,
+    "all": 47,
+    "val": [
+        [0, 1, 0],
+        [
+            [0, 2],
+            [1, 2]
+        ]
+    ],
+    "daysAhead": 1,
+    "index": 330,
+    "commulation": 1.4370157314814909
+}, {
+    "type": "down",
+    "probability": 1,
+    "all": 47,
+    "val": [
+        [0, 1, 0],
+        [
+            [1, 0],
+            [0, 2]
+        ]
+    ],
+    "daysAhead": 1,
+    "index": 141,
+    "commulation": 1.4370157314814909
+}, {
+    "type": "down",
+    "probability": 1,
+    "all": 47,
+    "val": [
+        [0, 1, 0],
+        [
+            [1, 0],
+            [0, 2],
+            [1, 2]
+        ]
+    ],
+    "daysAhead": 1,
+    "index": 438,
+    "commulation": 1.4370157314814909
+}, {
+    "type": "down",
+    "probability": 1,
+    "all": 52,
+    "val": [
+        [0, 1, 0],
+        [
+            [2, 0],
+            [1, 2]
+        ]
+    ],
+    "daysAhead": 1,
+    "index": 357,
+    "commulation": 1.4110260469014362
+}, {
+    "type": "down",
+    "probability": 1,
+    "all": 52,
+    "val": [
+        [0, 1, 0],
+        [
+            [2, 0]
+        ]
+    ],
+    "daysAhead": 1,
+    "index": 87,
+    "commulation": 1.4110260469014362
+}, {
+    "type": "down",
+    "probability": 1,
+    "all": 51,
+    "val": [
+        [-1, 1, 0],
+        [
+            [1, 0]
+        ]
+    ],
+    "daysAhead": 1,
+    "index": 34,
+    "commulation": 1.4104195348446609
+}, {
+    "type": "down",
+    "probability": 1,
+    "all": 51,
+    "val": [
+        [-1, 1, 0],
+        [
+            [1, 0],
+            [1, 2]
+        ]
+    ],
+    "daysAhead": 1,
+    "index": 277,
+    "commulation": 1.4104195348446609
+}, {
+    "type": "down",
+    "probability": 1,
+    "all": 51,
+    "val": [
+        [-1, 1, 0],
+        [
+            [1, 2]
+        ]
+    ],
+    "daysAhead": 1,
+    "index": 196,
+    "commulation": 1.4104195348446609
+}]

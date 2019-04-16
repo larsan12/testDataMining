@@ -1,0 +1,1405 @@
+{
+    "profit": 0.5943578192045982,
+    "operations": [{
+        "profit": 1.0059171597633136,
+        "obj": {
+            "type": "up",
+            "probability": 0.5343137254901961,
+            "all": 204,
+            "val": [
+                [0, 0, -1],
+                [
+                    [1, 2]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 198,
+            "commulation": 2.165261375087751
+        },
+        "steps": 3
+    }, {
+        "profit": 0.9825581395348837,
+        "obj": {
+            "type": "up",
+            "probability": 0.6274509803921569,
+            "all": 102,
+            "val": [
+                [0, 0, -1],
+                [
+                    [1, 0],
+                    [0, 2]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 144,
+            "commulation": 2.811246648610695
+        },
+        "steps": 3
+    }, {
+        "profit": 1.0116959064327486,
+        "obj": {
+            "type": "up",
+            "probability": 0.5343137254901961,
+            "all": 204,
+            "val": [
+                [0, 0, -1],
+                [
+                    [1, 2]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 198,
+            "commulation": 2.165261375087751
+        },
+        "steps": 3
+    }, {
+        "profit": 0.9884393063583815,
+        "obj": {
+            "type": "up",
+            "probability": 0.717391304347826,
+            "all": 46,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1],
+                    [2, 0]
+                ]
+            ],
+            "stepsAhead": 2,
+            "index": 171,
+            "commulation": 1.532764839701853
+        },
+        "steps": 2
+    }, {
+        "profit": 1,
+        "obj": {
+            "type": "up",
+            "probability": 0.717391304347826,
+            "all": 46,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1],
+                    [2, 0]
+                ]
+            ],
+            "stepsAhead": 2,
+            "index": 171,
+            "commulation": 1.532764839701853
+        },
+        "steps": 2
+    }, {
+        "profit": 1.0056497175141244,
+        "obj": {
+            "type": "up",
+            "probability": 0.5343137254901961,
+            "all": 204,
+            "val": [
+                [0, 0, -1],
+                [
+                    [1, 2]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 198,
+            "commulation": 2.165261375087751
+        },
+        "steps": 3
+    }, {
+        "profit": 0.9943820224719101,
+        "obj": {
+            "type": "up",
+            "probability": 0.6274509803921569,
+            "all": 102,
+            "val": [
+                [0, 0, -1],
+                [
+                    [1, 0],
+                    [0, 2]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 144,
+            "commulation": 2.811246648610695
+        },
+        "steps": 3
+    }, {
+        "profit": 0.9887005649717514,
+        "obj": {
+            "type": "up",
+            "probability": 0.6842105263157895,
+            "all": 76,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1],
+                    [2, 1]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 306,
+            "commulation": 2.3622424975471668
+        },
+        "steps": 3
+    }, {
+        "profit": 1,
+        "obj": {
+            "type": "up",
+            "probability": 0.5343137254901961,
+            "all": 204,
+            "val": [
+                [0, 0, -1],
+                [
+                    [1, 2]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 198,
+            "commulation": 2.165261375087751
+        },
+        "steps": 3
+    }, {
+        "profit": 1,
+        "obj": {
+            "type": "up",
+            "probability": 0.717391304347826,
+            "all": 46,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1],
+                    [2, 0]
+                ]
+            ],
+            "stepsAhead": 2,
+            "index": 171,
+            "commulation": 1.532764839701853
+        },
+        "steps": 2
+    }, {
+        "profit": 0.9888268156424581,
+        "obj": {
+            "type": "up",
+            "probability": 0.717391304347826,
+            "all": 46,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1],
+                    [2, 0]
+                ]
+            ],
+            "stepsAhead": 2,
+            "index": 171,
+            "commulation": 1.532764839701853
+        },
+        "steps": 2
+    }, {
+        "profit": 0.9944444444444445,
+        "obj": {
+            "type": "up",
+            "probability": 0.5343137254901961,
+            "all": 204,
+            "val": [
+                [0, 0, -1],
+                [
+                    [1, 2]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 198,
+            "commulation": 2.165261375087751
+        },
+        "steps": 3
+    }, {
+        "profit": 0.972972972972973,
+        "obj": {
+            "type": "up",
+            "probability": 0.717391304347826,
+            "all": 46,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1],
+                    [2, 0]
+                ]
+            ],
+            "stepsAhead": 2,
+            "index": 171,
+            "commulation": 1.532764839701853
+        },
+        "steps": 2
+    }, {
+        "profit": 0.978494623655914,
+        "obj": {
+            "type": "up",
+            "probability": 0.6274509803921569,
+            "all": 102,
+            "val": [
+                [0, 0, -1],
+                [
+                    [1, 0],
+                    [0, 2]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 144,
+            "commulation": 2.811246648610695
+        },
+        "steps": 3
+    }, {
+        "profit": 0.96875,
+        "obj": {
+            "type": "up",
+            "probability": 0.5343137254901961,
+            "all": 204,
+            "val": [
+                [0, 0, -1],
+                [
+                    [1, 2]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 198,
+            "commulation": 2.165261375087751
+        },
+        "steps": 3
+    }, {
+        "profit": 1.0160642570281124,
+        "obj": {
+            "type": "up",
+            "probability": 0.5343137254901961,
+            "all": 204,
+            "val": [
+                [0, 0, -1],
+                [
+                    [1, 2]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 198,
+            "commulation": 2.165261375087751
+        },
+        "steps": 3
+    }, {
+        "profit": 0.9841897233201581,
+        "obj": {
+            "type": "up",
+            "probability": 0.56,
+            "all": 175,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 9,
+            "commulation": 3.1686211123723376
+        },
+        "steps": 3
+    }, {
+        "profit": 1.028688524590164,
+        "obj": {
+            "type": "up",
+            "probability": 0.6274509803921569,
+            "all": 102,
+            "val": [
+                [0, 0, -1],
+                [
+                    [1, 0],
+                    [0, 2]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 144,
+            "commulation": 2.811246648610695
+        },
+        "steps": 3
+    }, {
+        "profit": 0.9799196787148594,
+        "obj": {
+            "type": "up",
+            "probability": 0.56,
+            "all": 175,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 9,
+            "commulation": 3.1686211123723376
+        },
+        "steps": 3
+    }, {
+        "profit": 1.0204918032786885,
+        "obj": {
+            "type": "up",
+            "probability": 0.5343137254901961,
+            "all": 204,
+            "val": [
+                [0, 0, -1],
+                [
+                    [1, 2]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 198,
+            "commulation": 2.165261375087751
+        },
+        "steps": 3
+    }, {
+        "profit": 1.0655021834061136,
+        "obj": {
+            "type": "up",
+            "probability": 0.56,
+            "all": 175,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 9,
+            "commulation": 3.1686211123723376
+        },
+        "steps": 3
+    }, {
+        "profit": 0.991304347826087,
+        "obj": {
+            "type": "up",
+            "probability": 0.6842105263157895,
+            "all": 76,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1],
+                    [2, 1]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 306,
+            "commulation": 2.3622424975471668
+        },
+        "steps": 3
+    }, {
+        "profit": 0.9649122807017544,
+        "obj": {
+            "type": "up",
+            "probability": 0.6274509803921569,
+            "all": 102,
+            "val": [
+                [0, 0, -1],
+                [
+                    [1, 0],
+                    [0, 2]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 144,
+            "commulation": 2.811246648610695
+        },
+        "steps": 3
+    }, {
+        "profit": 1.0132743362831858,
+        "obj": {
+            "type": "up",
+            "probability": 0.6274509803921569,
+            "all": 102,
+            "val": [
+                [0, 0, -1],
+                [
+                    [1, 0],
+                    [0, 2]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 144,
+            "commulation": 2.811246648610695
+        },
+        "steps": 3
+    }, {
+        "profit": 1.0504587155963303,
+        "obj": {
+            "type": "up",
+            "probability": 0.6842105263157895,
+            "all": 76,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1],
+                    [2, 1]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 306,
+            "commulation": 2.3622424975471668
+        },
+        "steps": 3
+    }, {
+        "profit": 1.0954773869346734,
+        "obj": {
+            "type": "up",
+            "probability": 0.56,
+            "all": 175,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 9,
+            "commulation": 3.1686211123723376
+        },
+        "steps": 3
+    }, {
+        "profit": 0.9521531100478469,
+        "obj": {
+            "type": "up",
+            "probability": 0.56,
+            "all": 175,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 9,
+            "commulation": 3.1686211123723376
+        },
+        "steps": 3
+    }, {
+        "profit": 0.9949748743718593,
+        "obj": {
+            "type": "up",
+            "probability": 0.6842105263157895,
+            "all": 76,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1],
+                    [2, 1]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 306,
+            "commulation": 2.3622424975471668
+        },
+        "steps": 3
+    }, {
+        "profit": 1.0049751243781095,
+        "obj": {
+            "type": "up",
+            "probability": 0.56,
+            "all": 175,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 9,
+            "commulation": 3.1686211123723376
+        },
+        "steps": 3
+    }, {
+        "profit": 1,
+        "obj": {
+            "type": "up",
+            "probability": 0.6842105263157895,
+            "all": 76,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1],
+                    [2, 1]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 306,
+            "commulation": 2.3622424975471668
+        },
+        "steps": 3
+    }, {
+        "profit": 0.985,
+        "obj": {
+            "type": "up",
+            "probability": 0.6274509803921569,
+            "all": 102,
+            "val": [
+                [0, 0, -1],
+                [
+                    [1, 0],
+                    [0, 2]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 144,
+            "commulation": 2.811246648610695
+        },
+        "steps": 3
+    }, {
+        "profit": 1.0153061224489797,
+        "obj": {
+            "type": "up",
+            "probability": 0.6842105263157895,
+            "all": 76,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1],
+                    [2, 1]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 306,
+            "commulation": 2.3622424975471668
+        },
+        "steps": 3
+    }, {
+        "profit": 1.0208333333333333,
+        "obj": {
+            "type": "up",
+            "probability": 0.56,
+            "all": 175,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 9,
+            "commulation": 3.1686211123723376
+        },
+        "steps": 3
+    }, {
+        "profit": 0.9846153846153847,
+        "obj": {
+            "type": "up",
+            "probability": 0.6842105263157895,
+            "all": 76,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1],
+                    [2, 1]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 306,
+            "commulation": 2.3622424975471668
+        },
+        "steps": 3
+    }, {
+        "profit": 1.0481283422459893,
+        "obj": {
+            "type": "up",
+            "probability": 0.6842105263157895,
+            "all": 76,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1],
+                    [2, 1]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 306,
+            "commulation": 2.3622424975471668
+        },
+        "steps": 3
+    }, {
+        "profit": 0.9894179894179894,
+        "obj": {
+            "type": "up",
+            "probability": 0.56,
+            "all": 175,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 9,
+            "commulation": 3.1686211123723376
+        },
+        "steps": 3
+    }, {
+        "profit": 1.0434782608695652,
+        "obj": {
+            "type": "up",
+            "probability": 0.5343137254901961,
+            "all": 204,
+            "val": [
+                [0, 0, -1],
+                [
+                    [1, 2]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 198,
+            "commulation": 2.165261375087751
+        },
+        "steps": 3
+    }, {
+        "profit": 0.9890710382513661,
+        "obj": {
+            "type": "up",
+            "probability": 0.6274509803921569,
+            "all": 102,
+            "val": [
+                [0, 0, -1],
+                [
+                    [1, 0],
+                    [0, 2]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 144,
+            "commulation": 2.811246648610695
+        },
+        "steps": 3
+    }, {
+        "profit": 0.9806763285024155,
+        "obj": {
+            "type": "up",
+            "probability": 0.5343137254901961,
+            "all": 204,
+            "val": [
+                [0, 0, -1],
+                [
+                    [1, 2]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 198,
+            "commulation": 2.165261375087751
+        },
+        "steps": 3
+    }, {
+        "profit": 0.9807692307692307,
+        "obj": {
+            "type": "up",
+            "probability": 0.56,
+            "all": 175,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 9,
+            "commulation": 3.1686211123723376
+        },
+        "steps": 3
+    }, {
+        "profit": 0.9854368932038835,
+        "obj": {
+            "type": "up",
+            "probability": 0.56,
+            "all": 175,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 9,
+            "commulation": 3.1686211123723376
+        },
+        "steps": 3
+    }, {
+        "profit": 0.9955156950672646,
+        "obj": {
+            "type": "up",
+            "probability": 0.56,
+            "all": 175,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 9,
+            "commulation": 3.1686211123723376
+        },
+        "steps": 3
+    }, {
+        "profit": 1.0044247787610618,
+        "obj": {
+            "type": "up",
+            "probability": 0.717391304347826,
+            "all": 46,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1],
+                    [2, 0]
+                ]
+            ],
+            "stepsAhead": 2,
+            "index": 171,
+            "commulation": 1.532764839701853
+        },
+        "steps": 2
+    }, {
+        "profit": 0.9617021276595744,
+        "obj": {
+            "type": "up",
+            "probability": 0.6842105263157895,
+            "all": 76,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1],
+                    [2, 1]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 306,
+            "commulation": 2.3622424975471668
+        },
+        "steps": 3
+    }, {
+        "profit": 0.9770114942528736,
+        "obj": {
+            "type": "up",
+            "probability": 0.56,
+            "all": 175,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 9,
+            "commulation": 3.1686211123723376
+        },
+        "steps": 3
+    }, {
+        "profit": 0.6570680628272252,
+        "obj": {
+            "type": "up",
+            "probability": 0.56,
+            "all": 175,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 9,
+            "commulation": 3.1686211123723376
+        },
+        "steps": 3
+    }, {
+        "profit": 1.0055096418732783,
+        "obj": {
+            "type": "up",
+            "probability": 0.56,
+            "all": 175,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 9,
+            "commulation": 3.1686211123723376
+        },
+        "steps": 3
+    }, {
+        "profit": 0.9971509971509972,
+        "obj": {
+            "type": "up",
+            "probability": 0.6842105263157895,
+            "all": 76,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1],
+                    [2, 1]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 306,
+            "commulation": 2.3622424975471668
+        },
+        "steps": 3
+    }, {
+        "profit": 0.9572953736654805,
+        "obj": {
+            "type": "up",
+            "probability": 0.5343137254901961,
+            "all": 204,
+            "val": [
+                [0, 0, -1],
+                [
+                    [1, 2]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 198,
+            "commulation": 2.165261375087751
+        },
+        "steps": 3
+    }, {
+        "profit": 0.9862068965517241,
+        "obj": {
+            "type": "up",
+            "probability": 0.56,
+            "all": 175,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 9,
+            "commulation": 3.1686211123723376
+        },
+        "steps": 3
+    }, {
+        "profit": 1.0138888888888888,
+        "obj": {
+            "type": "up",
+            "probability": 0.5343137254901961,
+            "all": 204,
+            "val": [
+                [0, 0, -1],
+                [
+                    [1, 2]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 198,
+            "commulation": 2.165261375087751
+        },
+        "steps": 3
+    }, {
+        "profit": 0.976271186440678,
+        "obj": {
+            "type": "up",
+            "probability": 0.6842105263157895,
+            "all": 76,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1],
+                    [2, 1]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 306,
+            "commulation": 2.3622424975471668
+        },
+        "steps": 3
+    }, {
+        "profit": 0.9899328859060402,
+        "obj": {
+            "type": "up",
+            "probability": 0.717391304347826,
+            "all": 46,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1],
+                    [2, 0]
+                ]
+            ],
+            "stepsAhead": 2,
+            "index": 171,
+            "commulation": 1.532764839701853
+        },
+        "steps": 2
+    }, {
+        "profit": 1,
+        "obj": {
+            "type": "up",
+            "probability": 0.56,
+            "all": 175,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 9,
+            "commulation": 3.1686211123723376
+        },
+        "steps": 3
+    }, {
+        "profit": 1.0408805031446542,
+        "obj": {
+            "type": "up",
+            "probability": 0.6842105263157895,
+            "all": 76,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1],
+                    [2, 1]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 306,
+            "commulation": 2.3622424975471668
+        },
+        "steps": 3
+    }, {
+        "profit": 0.9754601226993865,
+        "obj": {
+            "type": "up",
+            "probability": 0.56,
+            "all": 175,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 9,
+            "commulation": 3.1686211123723376
+        },
+        "steps": 3
+    }, {
+        "profit": 0.9969418960244648,
+        "obj": {
+            "type": "up",
+            "probability": 0.5343137254901961,
+            "all": 204,
+            "val": [
+                [0, 0, -1],
+                [
+                    [1, 2]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 198,
+            "commulation": 2.165261375087751
+        },
+        "steps": 3
+    }, {
+        "profit": 1.0227272727272727,
+        "obj": {
+            "type": "up",
+            "probability": 0.56,
+            "all": 175,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 9,
+            "commulation": 3.1686211123723376
+        },
+        "steps": 3
+    }, {
+        "profit": 0.9840255591054313,
+        "obj": {
+            "type": "up",
+            "probability": 0.56,
+            "all": 175,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 9,
+            "commulation": 3.1686211123723376
+        },
+        "steps": 3
+    }, {
+        "profit": 0.9911242603550295,
+        "obj": {
+            "type": "up",
+            "probability": 0.5343137254901961,
+            "all": 204,
+            "val": [
+                [0, 0, -1],
+                [
+                    [1, 2]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 198,
+            "commulation": 2.165261375087751
+        },
+        "steps": 3
+    }, {
+        "profit": 1.0030487804878048,
+        "obj": {
+            "type": "up",
+            "probability": 0.56,
+            "all": 175,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 9,
+            "commulation": 3.1686211123723376
+        },
+        "steps": 3
+    }, {
+        "profit": 1.0151515151515151,
+        "obj": {
+            "type": "up",
+            "probability": 0.6274509803921569,
+            "all": 102,
+            "val": [
+                [0, 0, -1],
+                [
+                    [1, 0],
+                    [0, 2]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 144,
+            "commulation": 2.811246648610695
+        },
+        "steps": 3
+    }, {
+        "profit": 0.967741935483871,
+        "obj": {
+            "type": "up",
+            "probability": 0.6842105263157895,
+            "all": 76,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1],
+                    [2, 1]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 306,
+            "commulation": 2.3622424975471668
+        },
+        "steps": 3
+    }, {
+        "profit": 1.021604938271605,
+        "obj": {
+            "type": "up",
+            "probability": 0.56,
+            "all": 175,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 9,
+            "commulation": 3.1686211123723376
+        },
+        "steps": 3
+    }, {
+        "profit": 0.9728915662650602,
+        "obj": {
+            "type": "up",
+            "probability": 0.6842105263157895,
+            "all": 76,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1],
+                    [2, 1]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 306,
+            "commulation": 2.3622424975471668
+        },
+        "steps": 3
+    }, {
+        "profit": 0.9656992084432717,
+        "obj": {
+            "type": "up",
+            "probability": 0.56,
+            "all": 175,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 9,
+            "commulation": 3.1686211123723376
+        },
+        "steps": 3
+    }, {
+        "profit": 0.9946949602122016,
+        "obj": {
+            "type": "up",
+            "probability": 0.6274509803921569,
+            "all": 102,
+            "val": [
+                [0, 0, -1],
+                [
+                    [1, 0],
+                    [0, 2]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 144,
+            "commulation": 2.811246648610695
+        },
+        "steps": 3
+    }, {
+        "profit": 0.9610027855153204,
+        "obj": {
+            "type": "up",
+            "probability": 0.56,
+            "all": 175,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 9,
+            "commulation": 3.1686211123723376
+        },
+        "steps": 3
+    }, {
+        "profit": 1.0203488372093024,
+        "obj": {
+            "type": "up",
+            "probability": 0.6274509803921569,
+            "all": 102,
+            "val": [
+                [0, 0, -1],
+                [
+                    [1, 0],
+                    [0, 2]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 144,
+            "commulation": 2.811246648610695
+        },
+        "steps": 3
+    }, {
+        "profit": 0.9941520467836257,
+        "obj": {
+            "type": "up",
+            "probability": 0.56,
+            "all": 175,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 9,
+            "commulation": 3.1686211123723376
+        },
+        "steps": 3
+    }, {
+        "profit": 0.991304347826087,
+        "obj": {
+            "type": "up",
+            "probability": 0.6274509803921569,
+            "all": 102,
+            "val": [
+                [0, 0, -1],
+                [
+                    [1, 0],
+                    [0, 2]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 144,
+            "commulation": 2.811246648610695
+        },
+        "steps": 3
+    }, {
+        "profit": 1.0117302052785924,
+        "obj": {
+            "type": "up",
+            "probability": 0.717391304347826,
+            "all": 46,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1],
+                    [2, 0]
+                ]
+            ],
+            "stepsAhead": 2,
+            "index": 171,
+            "commulation": 1.532764839701853
+        },
+        "steps": 2
+    }, {
+        "profit": 1.0058997050147493,
+        "obj": {
+            "type": "up",
+            "probability": 0.6842105263157895,
+            "all": 76,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1],
+                    [2, 1]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 306,
+            "commulation": 2.3622424975471668
+        },
+        "steps": 3
+    }, {
+        "profit": 0.9883381924198251,
+        "obj": {
+            "type": "up",
+            "probability": 0.6274509803921569,
+            "all": 102,
+            "val": [
+                [0, 0, -1],
+                [
+                    [1, 0],
+                    [0, 2]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 144,
+            "commulation": 2.811246648610695
+        },
+        "steps": 3
+    }, {
+        "profit": 1.0208333333333333,
+        "obj": {
+            "type": "up",
+            "probability": 0.717391304347826,
+            "all": 46,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1],
+                    [2, 0]
+                ]
+            ],
+            "stepsAhead": 2,
+            "index": 171,
+            "commulation": 1.532764839701853
+        },
+        "steps": 2
+    }, {
+        "profit": 1.0059880239520957,
+        "obj": {
+            "type": "up",
+            "probability": 0.56,
+            "all": 175,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 9,
+            "commulation": 3.1686211123723376
+        },
+        "steps": 3
+    }, {
+        "profit": 1.0214067278287462,
+        "obj": {
+            "type": "up",
+            "probability": 0.6274509803921569,
+            "all": 102,
+            "val": [
+                [0, 0, -1],
+                [
+                    [1, 0],
+                    [0, 2]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 144,
+            "commulation": 2.811246648610695
+        },
+        "steps": 3
+    }, {
+        "profit": 0.9849397590361446,
+        "obj": {
+            "type": "up",
+            "probability": 0.6842105263157895,
+            "all": 76,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1],
+                    [2, 1]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 306,
+            "commulation": 2.3622424975471668
+        },
+        "steps": 3
+    }, {
+        "profit": 1.0217391304347827,
+        "obj": {
+            "type": "up",
+            "probability": 0.6274509803921569,
+            "all": 102,
+            "val": [
+                [0, 0, -1],
+                [
+                    [1, 0],
+                    [0, 2]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 144,
+            "commulation": 2.811246648610695
+        },
+        "steps": 3
+    }, {
+        "profit": 1.0125786163522013,
+        "obj": {
+            "type": "up",
+            "probability": 0.56,
+            "all": 175,
+            "val": [
+                [0, 0, -1],
+                [
+                    [0, 1]
+                ]
+            ],
+            "stepsAhead": 3,
+            "index": 9,
+            "commulation": 3.1686211123723376
+        },
+        "steps": 3
+    }],
+    "steps": 630
+}
