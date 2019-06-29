@@ -1,6 +1,10 @@
 const Combinatorics = require('js-combinatorics')
 
-module.exports = (data) => {
+module.exports = (field) => (data) => {
+    function getString(comb) {
+        return comb.map(v => `(v${v[0]}.${field} > v${v[1]}.${field})`).join(' & ')
+    }
+
     function getCombs(m) {
         const vars = (new Array(m).fill(0)).map((v, i) => i)
         let compareCombs = Combinatorics.permutation(vars).toArray()
@@ -17,7 +21,7 @@ module.exports = (data) => {
     function check(comb, indeces) {
         try {
             comb.forEach(v => {
-                if (data[indeces[v[0]]] <= data[indeces[v[1]]]) {
+                if (data[indeces[v[0]]][field] <= data[indeces[v[1]]][field]) {
                     throw new Error('not okay')
                 }
             })
@@ -29,6 +33,7 @@ module.exports = (data) => {
 
     return {
         getCombs,
-        check
+        check,
+        getString
     }
 }
