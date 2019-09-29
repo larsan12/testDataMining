@@ -1,5 +1,6 @@
 const noDown = true;
 var data;
+var inputData;
 var minStep;
 var maxStep;
 var hypoteses;
@@ -26,6 +27,7 @@ function drawBasic() {
       minStep = d.operations[0].from - 30;
       maxStep = d.operations[d.operations.length - 1].from + 30;
       data = d
+      inputData = data.data;
 
       all_hypoteses = d.combs.reduce((result, curr, i) => {
         for (let i = 1; i <= d.config.stepsAhead; i++) {
@@ -107,10 +109,9 @@ function drawBasic() {
       
       setTitle('Конфигурация')
       setInfo({
-        ...data.config,
-        ...Object.keys(data.config.topCriteria).reduce((res, curr) => {
-          res['topCriteria.' + curr] = data.config.topCriteria[curr].length ? 
-            JSON.stringify(data.config.topCriteria[curr]) : data.config.topCriteria[curr]
+        ...Object.keys(data.config).reduce((res, curr) => {
+          res[curr] = data.config[curr].length ? 
+            JSON.stringify(data.config[curr]) : data.config[curr]
           return res
         }, {})
       })
@@ -129,9 +130,12 @@ function drawBasic() {
 
       // DRAW
 
+      setTitle('Input Data')
+      setTable('main_profit', drawInputDataMainColumnChart, 'Курс актива на обучающей выборке');
+
       setTitle('Графики для выполненных торговых операций')
-      setTable('hypotez_count', drawHypotesColumnChart, 'Прибыльность гипотез и колличество их использований')
       setTable('prof_com', drawProfit, 'Общий график прибыльности')
+      setTable('hypotez_count', drawHypotesColumnChart, 'Прибыльность гипотез и колличество их использований')
       setTable('prof_oper', drawProfitOper, 'Прибыльность по операциям')
       setTable('steps_com', drawProfitSteps, 'Прибыльность в зависимости от длительности операций')
       setTable('hypotez', drawHypotesCommulation, 'Прибыльность и вероятность для выбранной гипотезы')
@@ -207,6 +211,23 @@ function setHideFunc(cl, f) {
       setDrawFunc(cl, f)
       $(this).attr("disabled", false);
     });
+}
+
+function drawInputDataMainColumnChart(cl) {
+  const options = {
+    xVal: 'step',
+    yVal: 'price',
+    xText: 'время (шаги)',
+    yText: 'price',
+    noBullets: true,
+    yTooltip: ' r',
+    element: cl
+  }
+
+  drawChart(inputData.map((row, i) => {
+    row.step =  i;
+    return row;
+  }), options)
 }
 
 
@@ -515,10 +536,8 @@ function drawMultipleValues(d, opt) {
 
 function drawProfit(cl) {
   const options = {
-    xVal: 'commulate',
-    yVal: 'from',
-    xTitle: 'steps',
-    yTitle: 'profit %',
+    yVal: 'commulate',
+    xVal: 'from',
     yNote: '%',
     xText: 'время (шаги)',
     yText: 'прибыльность %',
@@ -538,10 +557,8 @@ function drawProfit(cl) {
 
 function drawProfitOper(cl) {
   const options = {
-    xVal: 'profit',
-    yVal: 'from',
-    xTitle: 'steps',
-    yTitle: 'profit %',
+    yVal: 'profit',
+    xVal: 'from',
     xText: 'время (шаги)',
     yText: 'прибыльность %',
     yNote: '%',
@@ -579,7 +596,7 @@ function drawChart(d, opt) {
   let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
 
   valueAxis.adapter.add("getTooltipText", (text) => {
-    return text + " %"
+    return text + (opt.yTooltip  || " %")
   });
 
 
@@ -590,8 +607,8 @@ function drawChart(d, opt) {
   // Create series
   let series = chart.series.push(new am4charts.LineSeries());
   
-  series.dataFields.valueY = opt.xVal;
-  series.dataFields.valueX = opt.yVal;
+  series.dataFields.valueY = opt.yVal;
+  series.dataFields.valueX = opt.xVal;
   series.strokeWidth = 1;
 
   if (!opt.noBullets) {

@@ -4,11 +4,11 @@ class Statistic {
     constructor () {
     }
 
-    static draw(data, name) {
-        Statistic.setFiles(data, name)
+    static draw(file, result, data) {
+        Statistic.setFiles(file, data, result)
     }
 
-    static setFiles(data, name) {
+    static setFiles(name, data, result) {
         let name1 = name
         let i = 0
         while (fs.existsSync('./view/' + name1)) {
@@ -16,7 +16,8 @@ class Statistic {
         }
         fs.mkdirSync('./view/' + name1)
         fs.mkdirSync('./view/' + name1 + '/data')
-        fs.writeFileSync('./view/' + name1 + '/data/' + 'data.json', JSON.stringify(data))
+        result.data = data;
+        fs.writeFileSync('./view/' + name1 + '/data/' + 'data.json', JSON.stringify(result))
         fs.copyFileSync('./view/example/index.html', './view/' + name1 +'/index.html')
         fs.copyFileSync('./view/example/script.js', './view/' + name1 +'/script.js')
 

@@ -63,26 +63,20 @@ async function getData() {
 }
 
 const config = {
-    minCount: 7,
     minProbality: 0.60,
     noDown: true,
-    topCriteria: {
-        top: 20,
-        strategy: 'commulationPerStep',
-        countBorder: 50,
-        minCount: 10,
-        borders: [
-            {
-                border: 5,
-                moreThan: 1
-            },
-            {
-                border: 20,
-                moreThan: 1
-            }
-        ],
-        density: 0.002
-    },
+    density: 0.3,
+    minCount: 10,
+    borders: [
+        {
+            border: 5,
+            moreThan: 1
+        },
+        {
+            border: 20,
+            moreThan: 1
+        }
+    ],
     trainVolume: 0.2,
     stepsAhead: 3,
     comission: 0.00034,
@@ -99,7 +93,7 @@ getData().then(data => {
     result.processingTime = Date.now() - date
     result.dataLength = data.length
 
-    View.draw(result, 'test')
+    View.draw('test', result, data)
 
     console.log()
 }).catch(err => {

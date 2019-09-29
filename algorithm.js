@@ -2,7 +2,6 @@ const Combinatorics = require('js-combinatorics')
 
 
 // TODO count commulation for operations
-// train on getActiveByTopCriteria
 
 class Algorithm {
     
@@ -70,7 +69,10 @@ class Algorithm {
         }
 
         this.clearHypotheses()
-        this.setActiveHypoteses()
+        
+        // set active
+        this.active = this.getActiveByTopCriteria(this.data.length * this.config.trainVolume)
+        console.log('active count: ' + this.active.length)
     }
 
     clearHypotheses() {
@@ -87,10 +89,11 @@ class Algorithm {
         }
     }
 
-    getActiveByTopCriteria() {
+    getActiveByTopCriteria(step) {
+        // generate hypoteses
         let result = this.combs.reduce((result, curr, i) => {
             // Check minCount
-                if (curr.all > this.config.topCriteria.minCount) {
+                if (curr.all > this.config.minCount) {
                     for (let i = 1; i <= this.config.stepsAhead; i++) {
                         const bodyUp = {
                             type: 'up',
@@ -101,11 +104,7 @@ class Algorithm {
                             i: i,
                             comb: curr,
                         }
-                        if (curr.index == 3 && i == 3) {
-                            console.log()
-                        }
                         result.push(bodyUp)
-
                         if (!this.config.noDown) {
                             const bodyDown = {
                                 type: 'down',
@@ -120,49 +119,29 @@ class Algorithm {
                         }
                     }
                 }
-            
                 return result
             }, [])
 
-            // Set countBorder
-            if (result.length > this.config.topCriteria.countBorder) {
-                result = result.sort((a, b) => b.count - a.count).slice(0, this.config.topCriteria.countBorder)
-            }
-
             // Use strategy
 
-            result = result.sort((a, b) => {
-                let result;
-                if (this.config.topCriteria.strategy == 'commulationPerStep') {
-                    result =  b.commulationPerStep - a.commulationPerStep
-                } else if (this.config.topCriteria.strategy == 'commulation') {
-                    result = b.commulation - a.commulation
-                }
-                return result
-            })
-            result = result.slice(0, this.config.topCriteria.top)
-                .map(v => this.getActiveBody(v.comb, v.type, v.i))
-            
-            if (this.config.topCriteria.borders.length) {
-                result = result.filter(v => !this.config.topCriteria.borders.some(b => !this.borderIsFine(v.commulate_hist, b)))
-            }
-                
-            return result
-    }
+            result = result.sort((a, b) => b.commulationPerStep - a.commulationPerStep)
 
-    setActiveHypoteses() {
-        this.active = []
-        if (this.config.topCriteria) {
-            this.active = this.getActiveByTopCriteria()
-        } else {
-            this.combs.forEach(r => {
-                const active = this.getActiveHypoteses(r)
-                if (active.length) {
-                    this.active = this.active.concat(active)
-                } 
-            })
-        }
-        console.log('active count: ' + this.active.length)
+            const maxCount = step * this.config.density
+            let currCount = 0
+            let filteredResult = []
+            while (currCount < maxCount) {
+                const curr = result.shift()
+                currCount += curr.comb.all
+                filteredResult.push(curr)
+            }
+
+            filteredResult = filteredResult.map(v => this.getActiveBody(v.comb, v.type, v.i))
+            
+            if (this.config.borders.length) {
+                filteredResult = filteredResult.filter(v => !this.config.borders.some(b => !this.borderIsFine(v.commulate_hist, b)))
+            }
+
+            return filteredResult
     }
 
     _remove(arr, i) {
@@ -198,46 +177,6 @@ class Algorithm {
         }
 
         return result
-    }
-
-    checkRequirementsUp(comb, i) {
-        return (
-            (comb.up[i] / comb.all > this.config.minProbality)
-            &&
-            this.bordersIsFine(comb, i, 'up', this.config.commulateBorders)
-        )
-    }
-
-    checkRequirementsDown(comb, i) {
-        return (
-            (comb.down[i] / comb.all > this.config.minProbality)
-            &&
-            this.bordersIsFine(comb, i, 'down', this.config.commulateBorders)
-        )
-    }
-
-    getActiveHypoteses(comb) {
-        let active = []
-        if (comb.all && comb.all > this.config.minCount) {
-            for (let i = 1; i <= this.config.stepsAhead; i++) {
-                if (this.checkRequirementsUp(comb, i)) {
-                    active.push(this.getActiveBody(comb, 'up', i))
-                }
-                if (this.checkRequirementsDown(comb, i)) {
-                    active.push(this.getActiveBody(comb, 'down', i))
-                }
-            }
-        }
-
-        return active
-    }
-
-
-    checkHypotezAgain(comb) {
-        let active = this.getActiveHypoteses(comb)
-        if (active.length) {
-            this.active = this.active.filter(e => e.index != comb.index).concat(active)
-        }
     }
 
     getActiveBody(comb, type, i) {
@@ -291,9 +230,6 @@ class Algorithm {
                         const toDown = 1 / toUp
 
                         //TODO make hold on strategy
-                        if (c.index == 0 && i == 3) {
-                            console.log()
-                        }
                         if (c.up_block[i] <= lastIndex) {
                             c.commulate_up[i] = c.commulate_up[i] * toUp
                             c.commulate_hist_up[i].push(toUp)
@@ -307,32 +243,12 @@ class Algorithm {
                         }
                     }
                 }
-
-                if (!isTrain && !this.config.topCriteria) {
-                    this.checkHypotezAgain(c)
-                }
             }
         })
 
         // remove unactual active hypoteses
         if (!isTrain) {
-            if (!this.config.topCriteria) {
-                this.active.forEach((a, l) => {
-                    if (a.type == 'up') {
-                        if (!this.checkRequirementsUp(a.comb, a.stepsAhead)) {
-                            return this._remove(this.active, l)
-                        }
-                    } else {
-                        if (!this.checkRequirementsDown(a.comb, a.stepsAhead)) {
-                            return this._remove(this.active, l)
-                        }
-                    }
-                    a.probability = a.type == 'up' ? a.comb.up[a.stepsAhead]/a.comb.all : a.comb.down[a.stepsAhead]/a.comb.all
-                    a.all = a.comb.all
-                })
-            } else {
-                this.active = this.getActiveByTopCriteria()
-            }
+            this.active = this.getActiveByTopCriteria(lastIndex)
         }
     }
 
