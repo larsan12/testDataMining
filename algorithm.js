@@ -5,9 +5,9 @@ const Combinatorics = require('js-combinatorics')
 
 class Algorithm {
     
-    constructor(config, first, second, data) {
-        this.first = first(data)
-        this.second = second(data)
+    constructor(config, data, ...predicates) {
+        this.first = predicates[0](data)
+        this.second = predicates[1](data)
         this.config = config
         this.data = data
         this.m = config.m

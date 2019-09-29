@@ -63,7 +63,6 @@ async function getData() {
 }
 
 const config = {
-    minProbality: 0.60,
     noDown: true,
     density: 0.3,
     minCount: 10,
@@ -84,7 +83,7 @@ const config = {
 }
 
 getData().then(data => {
-    const alg = new Algorithm(config, Compare('open'), Compare('close'), data)
+    const alg = new Algorithm(config, data, Compare('open'), Compare('close'))
 
     const date = Date.now()
 
