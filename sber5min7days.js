@@ -83,7 +83,7 @@ const config = {
 }
 
 getData().then(data => {
-    const alg = new Algorithm(config, data, Compare('open'), Compare('close'))
+    const alg = new Algorithm(config, data, Compare('open', 3), Compare('close', 3))
 
     const date = Date.now()
 
@@ -96,5 +96,5 @@ getData().then(data => {
 
     console.log()
 }).catch(err => {
-    console.log(err)
+    console.trace(err)
 })

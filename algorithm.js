@@ -6,25 +6,25 @@ const Combinatorics = require('js-combinatorics')
 class Algorithm {
     
     constructor(config, data, ...predicates) {
-        this.first = predicates[0](data)
-        this.second = predicates[1](data)
+        this.predicates = predicates.map(p => p(data));
         this.config = config
         this.data = data
-        this.m = config.m
         this.stepsAhead = config.stepsAhead
+
+        // for report
         this.comb_limit = config.comb_limit || 50
     }
 
     processing() {
         console.log('Start processing')
 
-        this.combs = Combinatorics.cartesianProduct(this.first.getCombs(this.m), this.second.getCombs(this.m))
+        this.combs = Combinatorics.cartesianProduct(...this.predicates.map(p => p.getCombs()))
             .toArray()
-            .map((v, i) => {
-                v.string = this.first.getString(v[0]) + ' & ' + this.second.getString(v[1])
-                v.index = i
-                return v
-            })
+            .reduce((res, v, i) => {
+                v.string = this.predicates.map((p, j) => p.getString(v[j])).join(' & ')
+                res[v.map(row => row.id).join('')] = v
+                return res
+            }, {})
     
         this.train()
     
@@ -36,8 +36,11 @@ class Algorithm {
             profit: this.profit,
             operations: this.operations,
             config: this.config,
-            combs: this.combs.sort((a, b) => b.all - a.all).slice(0, this.comb_limit)
-                .map(v => {
+            combs: Object.keys(this.combs)
+                .sort((a, b) => this.combs[b].all - this.combs[a].all)
+                .slice(0, this.comb_limit)
+                .map(key => {
+                    const v = this.combs[key]
                     return {
                         val: [...v],
                         all: v.all,
@@ -47,8 +50,7 @@ class Algorithm {
                         commulate_up: v.commulate_up,
                         down: v.down,
                         string: v.string,
-                        up: v.up,
-                        index: v.index,
+                        up: v.up
                     }
                 })
         }
@@ -80,46 +82,48 @@ class Algorithm {
         /**
          * remove unnecessary hypotheses
          */
-        const len = this.combs.length
+        const keys = Object.keys(this.combs);
+        const len = Object.keys(this.combs).length
         for (let i = 0; i < len; i++) {
             const index = len - 1 - i
-            if (!this.combs[index].all) {
-                this._remove(this.combs, index)
+            if (!this.combs[keys[index]].all) {
+                delete this.combs[keys[index]]
             }
         }
     }
 
     getActiveByTopCriteria(step) {
         // generate hypoteses
-        let result = this.combs.reduce((result, curr, i) => {
+        let result = Object.keys(this.combs).reduce((result, key) => {
+            const curr = this.combs[key];
             // Check minCount
-                if (curr.all > this.config.minCount) {
-                    for (let i = 1; i <= this.config.stepsAhead; i++) {
-                        const bodyUp = {
-                            type: 'up',
-                            probability: curr.up[i] / curr.all,
-                            commulation: curr.commulate_up[i],
-                            commulationPerStep: (curr.commulate_up[i] - 1)/(curr.up[i] * i),
+            if (curr.all > this.config.minCount) {
+                for (let i = 1; i <= this.config.stepsAhead; i++) {
+                    const bodyUp = {
+                        type: 'up',
+                        probability: curr.up[i] / curr.all,
+                        commulation: curr.commulate_up[i],
+                        commulationPerStep: (curr.commulate_up[i] - 1)/(curr.up[i] * i),
+                        count: curr.all,
+                        i: i,
+                        comb: curr,
+                    }
+                    result.push(bodyUp)
+                    if (!this.config.noDown) {
+                        const bodyDown = {
+                            type: 'down',
+                            probability: curr.down[i] / curr.all,
+                            commulation: curr.commulate_down[i],
+                            commulationPerStep: (curr.commulate_down[i] - 1)/(curr.up[i] * i),
                             count: curr.all,
-                            i: i,
                             comb: curr,
+                            i: i
                         }
-                        result.push(bodyUp)
-                        if (!this.config.noDown) {
-                            const bodyDown = {
-                                type: 'down',
-                                probability: curr.down[i] / curr.all,
-                                commulation: curr.commulate_down[i],
-                                commulationPerStep: (curr.commulate_down[i] - 1)/(curr.up[i] * i),
-                                count: curr.all,
-                                comb: curr,
-                                i: i
-                            }
-                            result.push(bodyDown)
-                        }
+                        result.push(bodyDown)
                     }
                 }
-                return result
+            }
+            return result
             }, [])
 
             // Use strategy
@@ -142,10 +146,6 @@ class Algorithm {
             }
 
             return filteredResult
-    }
-
-    _remove(arr, i) {
-        arr.splice(i, 1)
     }
 
     borderIsFine(hist, cond) {
@@ -190,8 +190,6 @@ class Algorithm {
             string: comb.string,
             commulate_hist: type == 'up' ? comb.commulate_hist_up[i] : comb.commulate_hist_down[i],
             stepsAhead: i,
-            id: comb.index + '_' + i + '_' + type,
-            index: comb.index,
             comb
         }
     }
@@ -207,8 +205,9 @@ class Algorithm {
     processRow(indeces, isTrain = true) {
         const lastIndex = indeces[indeces.length - 1]
     
-        this.combs.forEach(c => {
-            if (this.first.check(c[0], indeces) && this.second.check(c[1], indeces)) {
+        Object.keys(this.combs).forEach(key => {
+            const c = this.combs[key]
+            if (!this.predicates.some((p, j) => !p.check(c[j], indeces))) {
                 
                 if (!c.all) {
                     this.initCombinationFields(c)
@@ -267,7 +266,7 @@ class Algorithm {
 
         try {
             this.active.forEach(c => {
-                if (this.first.check(c.val[0], indeces) && this.second.check(c.val[1], indeces)) {
+                if (!this.predicates.some((p, j) => !p.check(c.val[j], indeces))) {
 
                     if (c.type === 'up') {
                         up = true
@@ -309,7 +308,6 @@ class Algorithm {
 
         if (operation.profit) {
             operation.obj = obj
-            operation.id = obj.id
             operation.steps = steps
             operation.from = lastIndex
             operation.to = lastIndex + steps
@@ -325,7 +323,6 @@ class Algorithm {
     
         const generator = this.getGenerator(undefined, parseInt(this.data.length * this.config.trainVolume) + 1)
         let indeces
-        let processIndeces = []
         let ind = 0
         while (indeces = generator.next()) {
             if (!this.nextStepFrom || this.nextStepFrom <= indeces[0]) {
