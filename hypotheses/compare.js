@@ -18,11 +18,16 @@ const Compare = (field, depth) => (data) => {
         })
         return compareCombs
     }
-
-    function check(comb, indeces) {
+    // including index
+    function check(comb, index) {
+        if (index - depth + 1 < 0) {
+            return false
+        }
         try {
             comb.forEach(v => {
-                if (data[indeces[v[0]]][field] <= data[indeces[v[1]]][field]) {
+                const leftIndex = index - depth + 1 + v[0]
+                const rightIndex = index - depth + 1 + v[1]
+                if (data[leftIndex][field] <= data[rightIndex][field]) {
                     throw new Error('not okay')
                 }
             })
