@@ -1,6 +1,6 @@
 const Combinatorics = require('js-combinatorics')
 
-const Compare = (field, depth) => (data) => {
+const Compare = (field, depth) => () => {
     function getString(comb) {
         return comb.map(v => `(v${v[0]}.${field} > v${v[1]}.${field})`).join(' & ')
     }
@@ -19,7 +19,7 @@ const Compare = (field, depth) => (data) => {
         return compareCombs
     }
     // including index
-    function check(comb, index) {
+    function check(comb, index, data) {
         if (index - depth + 1 < 0) {
             return false
         }

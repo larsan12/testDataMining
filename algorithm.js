@@ -6,7 +6,8 @@ const Combinatorics = require('js-combinatorics')
 class Algorithm {
     
     constructor(config, data, ...predicates) {
-        this.predicates = predicates.map(p => p(data));
+        this.availableData = []
+        this.predicates = predicates.map(p => p())
         this.config = config
         this.data = data
         this.stepsAhead = config.stepsAhead
@@ -61,23 +62,49 @@ class Algorithm {
         })
     }
 
+    pushNewData(numberRows) {
+        this.availableData = this.availableData.concat(
+            this.data.slice(this.availableData.length, this.availableData.length + numberRows)
+        );
+    }
+
     train() {
         console.log('Start training')
         const len = parseInt(this.data.length * this.config.trainVolume)
         let i = this.stepsAhead
+        this.pushNewData(i + 1)
         while (i <= len) {
             if (i % 100 === 0) {
                 console.log(`progress: ${i}/${this.data.length}`)
             }
             this.processRow(i - this.stepsAhead)
             i++
+            this.pushNewData(1)
         }
 
         this.clearHypotheses()
         
         // set active
-        this.active = this.getActiveByTopCriteria(this.data.length * this.config.trainVolume)
+        this.active = this.getActiveByTopCriteria(len)
         console.log('active count: ' + this.active.length)
+    }
+
+    checkHypotheses() {
+        this.profit = 1
+        this.operations = []
+        let i = this.availableData.length
+        this.pushNewData(1)
+        while (i < this.data.length) {
+            if (i % 100 === 0) {
+                console.log(`progress: ${i}/${this.data.length}`)
+            }
+            if (!this.nextStepFrom || this.nextStepFrom <= i) {
+                this.checkRow(i)
+            }
+            this.processRow(i - this.stepsAhead, false)
+            i++
+            this.pushNewData(1)
+        }
     }
 
     clearHypotheses() {
@@ -208,7 +235,7 @@ class Algorithm {
     processRow(index, isTrain = true) {
         Object.keys(this.combs).forEach(key => {
             const c = this.combs[key]
-            if (!this.predicates.some((p, j) => !p.check(c[j], index))) {
+            if (!this.predicates.some((p, j) => !p.check(c[j], index, this.availableData))) {
                 
                 if (!c.all) {
                     this.initCombinationFields(c)
@@ -219,7 +246,7 @@ class Algorithm {
                 // check results 
 
                 for (let i = 1; i <= this.config.stepsAhead; i++) {
-                    if (this.data.length > index + i) {
+                    if (this.availableData.length > index + i) {
                         if (this.isProfitable(index, index + i)) {
                             c.up[i]++
                         } else {
@@ -241,6 +268,8 @@ class Algorithm {
                             c.commulate_hist_down[i].push(toDown)
                             c.up_block[i] = index + i
                         }
+                    } else {
+                        console.log()
                     }
                 }
             }
@@ -263,7 +292,7 @@ class Algorithm {
         let steps
         try {
             this.active.forEach(c => {
-                if (!this.predicates.some((p, j) => !p.check(c.val[j], index))) {
+                if (!this.predicates.some((p, j) => !p.check(c.val[j], index, this.availableData))) {
 
                     if (c.type === 'up') {
                         up = true
@@ -291,10 +320,6 @@ class Algorithm {
 
         const operation = {}
 
-        if (index + steps >= this.data.length) {
-            steps = this.data.length - index - 1
-        }
-
         if (up) {
             operation.profit = this.getProfit(index, index + steps)
         } else if (down) {
@@ -313,23 +338,6 @@ class Algorithm {
             this.nextStepFrom = index + steps - 1
         }
     }
-
-    checkHypotheses() {
-        this.profit = 1
-        this.operations = []
-        let i = parseInt(this.data.length * this.config.trainVolume) + 1
-        while (i < this.data.length) {
-            if (i % 100 === 0) {
-                console.log(`progress: ${i}/${this.data.length}`)
-            }
-            if (!this.nextStepFrom || this.nextStepFrom <= i) {
-                this.checkRow(i)
-            }
-            this.processRow(i - this.stepsAhead, false)
-            i++
-        }
-    }
-
 
     initCombinationFields(c) {
         c.all = 1
