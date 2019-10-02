@@ -22,7 +22,8 @@ class Algorithm {
             .toArray()
             .reduce((res, v, i) => {
                 v.string = this.predicates.map((p, j) => p.getString(v[j])).join(' & ')
-                res[v.map(row => row.id).join('')] = v
+                v.id = v.map(row => row.id).join('-')
+                res[v.map(row => row.id).join('-')] = v
                 return res
             }, {})
     
@@ -50,7 +51,8 @@ class Algorithm {
                         commulate_up: v.commulate_up,
                         down: v.down,
                         string: v.string,
-                        up: v.up
+                        up: v.up,
+                        id: v.id
                     }
                 })
         }
@@ -220,6 +222,7 @@ class Algorithm {
             string: comb.string,
             commulate_hist: type == 'up' ? comb.commulate_hist_up[i] : comb.commulate_hist_down[i],
             stepsAhead: i,
+            id: comb.id,
             comb
         }
     }
@@ -332,6 +335,7 @@ class Algorithm {
             operation.obj = obj
             operation.steps = steps
             operation.from = index
+            operation.id = obj.id
             operation.to = index + steps
             this.profit = this.profit * operation.profit
             this.operations.push(operation)

@@ -39,7 +39,7 @@ function drawBasic() {
             commulate_hist: curr.commulate_hist_up[i],
             stepsAhead: i,
             comb: curr,
-            id: curr.index + '_' + i + '_' + 'up'
+            id: curr.id + '_' + i + '_' + 'up'
           }
           result.push(bodyUp)
           
@@ -52,7 +52,7 @@ function drawBasic() {
               stepsAhead: i,
               commulate_hist: curr.commulate_hist_down[i],
               comb: curr,
-              id: curr.index + '_' + i + '_' + 'down'
+              id: curr.id + '_' + i + '_' + 'down'
             }
             result.push(bodyDown)
           }
