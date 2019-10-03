@@ -339,7 +339,7 @@ class Algorithm {
             operation.to = index + steps
             this.profit = this.profit * operation.profit
             this.operations.push(operation)
-            this.nextStepFrom = index + steps - 1
+            this.nextStepFrom = index + steps
         }
     }
 
