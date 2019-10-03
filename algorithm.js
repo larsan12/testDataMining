@@ -11,6 +11,7 @@ class Algorithm {
         this.config = config
         this.data = data
         this.stepsAhead = config.stepsAhead
+        this.m = 3
         // for report
         this.comb_limit = config.comb_limit || 50
     }
@@ -68,6 +69,17 @@ class Algorithm {
         this.availableData = this.availableData.concat(
             this.data.slice(this.availableData.length, this.availableData.length + numberRows)
         );
+    }
+
+    // break у данных, если с предыдущими данными есть разрыв
+    
+    // TODO убрать в predicates
+    getNextIndex(ind) {
+        let i = ind + 1
+        if (this.data[i].break) {
+            i = i + this.m - 1
+        }
+        return i
     }
 
     train() {
@@ -238,8 +250,7 @@ class Algorithm {
     processRow(index, isTrain = true) {
         Object.keys(this.combs).forEach(key => {
             const c = this.combs[key]
-            if (!this.predicates.some((p, j) => !p.check(c[j], index, this.availableData))) {
-                
+            if (!this.predicates.some((p, j) => !p.check(c[j], index, this.availableData))) {                
                 if (!c.all) {
                     this.initCombinationFields(c)
                 } else {
