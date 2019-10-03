@@ -79,21 +79,21 @@ class Algorithm {
         if (this.data[i].break) {
             i = i + this.m - 1
         }
+        this.pushNewData(i - ind)
         return i
     }
 
     train() {
         console.log('Start training')
         const len = parseInt(this.data.length * this.config.trainVolume)
-        let i = this.stepsAhead
-        this.pushNewData(i + 1)
+        this.pushNewData(this.stepsAhead + 1)
+        let i = 0
         while (i <= len) {
             if (i % 100 === 0) {
                 console.log(`progress: ${i}/${this.data.length}`)
             }
-            this.processRow(i - this.stepsAhead)
-            i++
-            this.pushNewData(1)
+            this.processRow(i)
+            i = this.getNextIndex(i)
         }
 
         this.clearHypotheses()
@@ -116,8 +116,7 @@ class Algorithm {
                 this.checkRow(i)
             }
             this.processRow(i - this.stepsAhead, false)
-            i++
-            this.pushNewData(1)
+            i = this.getNextIndex(i)
         }
     }
 
