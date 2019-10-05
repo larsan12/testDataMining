@@ -72,12 +72,12 @@ class Algorithm {
     }
 
     // break у данных, если с предыдущими данными есть разрыв
-    
-    // TODO убрать в predicates
     getNextIndex(ind) {
         let i = ind + 1
-        if (this.data[i].break) {
-            i = i + this.m - 1
+        // check break flag
+        while(this.data.slice(i + 1, i + this.stepsAhead + 1).some(val => val.break)) {
+            const lastBreak = this.data.slice(i + 1, i + this.stepsAhead + 1).map(v => v.break).lastIndexOf(true)
+            i = (lastBreak !== - 1 ? lastBreak : 1) + i + 1
         }
         if (i % 100 === 0) {
             console.log(`progress: ${i}/${this.data.length}`)
@@ -100,7 +100,6 @@ class Algorithm {
         
         // set active
         this.active = this.getActiveByTopCriteria(len)
-        console.log('active count: ' + this.active.length)
     }
 
     checkHypotheses() {
