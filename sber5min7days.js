@@ -96,5 +96,5 @@ getData().then(data => {
 
     console.log()
 }).catch(err => {
-    console.log(err)
+    console.trace(err)
 })

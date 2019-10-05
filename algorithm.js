@@ -54,6 +54,23 @@ class Algorithm {
         }
     }
 
+
+    checkHypotheses() {
+        this.profit = 1
+        this.operations = []
+    
+        const generator = this.getGenerator(undefined, parseInt(this.data.length * this.config.trainVolume) + 2)
+        let indeces
+        let newInd
+        while (newInd = generator.next(true)) {
+            indeces = newInd
+            if (!this.nextStepFrom || this.nextStepFrom <= indeces[0]) {
+                this.checkRow(indeces)
+            }
+            this.processRow(indeces.map(v => v - this.stepsAhead), false)
+        }
+    }
+
     removeUnnecessaryDependencies() {
         this.operations.forEach(v => {
             delete v.obj.comb
@@ -62,9 +79,11 @@ class Algorithm {
 
     train() {
         console.log('Start training')
-        const generator = this.getGenerator(parseInt(this.data.length * this.config.trainVolume))
+        const generator = this.getGenerator(parseInt(this.data.length * this.config.trainVolume) + 2)
         let indeces
-        while (indeces = generator.next()) {
+        let newInd 
+        while (newInd = generator.next()) {
+            indeces = newInd
             this.processRow(indeces)
         }
 
@@ -266,6 +285,9 @@ class Algorithm {
         let probability
 
         try {
+            if (lastIndex == 2576) {
+                console.log()
+            }
             this.active.forEach(c => {
                 if (this.first.check(c.val[0], indeces) && this.second.check(c.val[1], indeces)) {
 
@@ -306,8 +328,11 @@ class Algorithm {
         }
 
         // GET OPERATION BODY
-
         if (operation.profit) {
+            const idd = obj.val[0].map(row => row.join('')).join('')
+            + '-' + obj.val[1].map(row => row.join('')).join('')
+            console.log(lastIndex + ' ' + idd + ' ' + operation.profit + ' ' + steps)
+
             operation.obj = obj
             operation.id = obj.id
             operation.steps = steps
@@ -315,27 +340,7 @@ class Algorithm {
             operation.to = lastIndex + steps
             this.profit = this.profit * operation.profit
             this.operations.push(operation)
-            this.nextStepFrom = indeces[0] + steps - 1
-        }
-    }
-
-    checkHypotheses() {
-        this.profit = 1
-        this.operations = []
-    
-        const generator = this.getGenerator(undefined, parseInt(this.data.length * this.config.trainVolume) + 1)
-        let indeces
-        let processIndeces = []
-        let ind = 0
-        while (indeces = generator.next()) {
-            if (!this.nextStepFrom || this.nextStepFrom <= indeces[0]) {
-                this.checkRow(indeces)
-            }
-            if (ind == this.stepsAhead) {
-                this.processRow(indeces.map(v => v - this.stepsAhead), false)
-            } else {
-                ind++
-            }
+            this.nextStepFrom = indeces[0] + steps
         }
     }
 
@@ -344,22 +349,26 @@ class Algorithm {
             limit = this.data.length
         }
         let i = from - 1
-        function next() {
+        function next(noTrain) {
             i = i + 1
 
             //logging
-            if (i % 100 === 0) {
-                console.log(`progress: ${i}/${this.data.length}`)
+            if ((i + 2) % 100 === 0 && noTrain) {
+                console.log(`progress: ${i + 2}/${this.data.length}`)
             }
 
+            const getIndices = (ind) => (new Array(this.m).fill(0)).map((v, j) => j + ind)
+
             if ((i + this.m < limit) && (i + this.m < this.data.length)) {
-                if (this.data[i + this.m].break) {
-                    i = i + this.m
+                let result = getIndices(i)
+                while (this.data[result[result.length - 1]].break) {
+                    i = i + this.m - 1
                     if (!((i + this.m < limit) && (i + this.m < this.data.length))) {
                         return false
                     }
+                    result = getIndices(i) 
                 }
-                return (new Array(this.m).fill(0)).map((v, j) => j + i)
+                return result
             } else {
                 return false
             }
