@@ -11,7 +11,6 @@ class Algorithm {
         this.config = config
         this.data = data
         this.stepsAhead = config.stepsAhead
-        this.m = 3
         // for report
         this.comb_limit = config.comb_limit || 50
     }

@@ -78,8 +78,7 @@ const config = {
     ],
     trainVolume: 0.2,
     stepsAhead: 3,
-    comission: 0.00034,
-    m: 3
+    comission: 0.00034
 }
 
 getData().then(data => {
