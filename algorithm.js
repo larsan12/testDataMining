@@ -79,6 +79,9 @@ class Algorithm {
         if (this.data[i].break) {
             i = i + this.m - 1
         }
+        if (i % 100 === 0) {
+            console.log(`progress: ${i}/${this.data.length}`)
+        }
         this.pushNewData(i - ind)
         return i
     }
@@ -89,9 +92,6 @@ class Algorithm {
         this.pushNewData(this.stepsAhead + 1)
         let i = 0
         while (i <= len) {
-            if (i % 100 === 0) {
-                console.log(`progress: ${i}/${this.data.length}`)
-            }
             this.processRow(i)
             i = this.getNextIndex(i)
         }
@@ -106,12 +106,9 @@ class Algorithm {
     checkHypotheses() {
         this.profit = 1
         this.operations = []
-        let i = this.availableData.length
         this.pushNewData(1)
+        let i = this.availableData.length - this.stepsAhead + 1
         while (i < this.data.length) {
-            if (i % 100 === 0) {
-                console.log(`progress: ${i}/${this.data.length}`)
-            }
             if (!this.nextStepFrom || this.nextStepFrom <= i) {
                 this.checkRow(i)
             }
