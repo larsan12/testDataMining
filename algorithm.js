@@ -7,7 +7,8 @@ class Algorithm {
     
     constructor(config, data, ...predicates) {
         this.availableData = []
-        this.predicates = predicates.map(p => p())
+        this.combs = []
+        this.predicates = predicates
         this.config = config
         this.data = data
         this.stepsAhead = config.stepsAhead
@@ -17,51 +18,9 @@ class Algorithm {
 
     processing() {
         console.log('Start processing')
-
-        this.combs = Combinatorics.cartesianProduct(...this.predicates.map(p => p.getCombs()))
-            .toArray()
-            .reduce((res, v, i) => {
-                v.string = this.predicates.map((p, j) => p.getString(v[j])).join(' & ')
-                v.id = v.map(row => row.id).join('-')
-                res[v.map(row => row.id).join('-')] = v
-                return res
-            }, {})
-    
         this.train()
-    
         this.checkHypotheses()
-
-        this.removeUnnecessaryDependencies()
-    
-        return {
-            profit: this.profit,
-            operations: this.operations,
-            config: this.config,
-            combs: Object.keys(this.combs)
-                .sort((a, b) => this.combs[b].all - this.combs[a].all)
-                .slice(0, this.comb_limit)
-                .map(key => {
-                    const v = this.combs[key]
-                    return {
-                        val: [...v],
-                        all: v.all,
-                        commulate_down: v.commulate_down,
-                        commulate_hist_down: v.commulate_hist_down,
-                        commulate_hist_up: v.commulate_hist_up,
-                        commulate_up: v.commulate_up,
-                        down: v.down,
-                        string: v.string,
-                        up: v.up,
-                        id: v.id
-                    }
-                })
-        }
-    }
-
-    removeUnnecessaryDependencies() {
-        this.operations.forEach(v => {
-            delete v.obj.comb
-        })
+        return this.getResultBody()
     }
 
     pushNewData(numberRows) {
@@ -94,9 +53,6 @@ class Algorithm {
             this.processRow(i)
             i = this.getNextIndex(i)
         }
-
-        this.clearHypotheses()
-        
         // set active
         this.active = this.getActiveByTopCriteria(len)
     }
@@ -115,21 +71,6 @@ class Algorithm {
         }
     }
 
-    clearHypotheses() {
-        console.log('clearHypotheses')
-        /**
-         * remove unnecessary hypotheses
-         */
-        const keys = Object.keys(this.combs);
-        const len = Object.keys(this.combs).length
-        for (let i = 0; i < len; i++) {
-            const index = len - 1 - i
-            if (!this.combs[keys[index]].all) {
-                delete this.combs[keys[index]]
-            }
-        }
-    }
-
     getActiveByTopCriteria(step) {
         // generate hypoteses
         let result = Object.keys(this.combs).reduce((result, key) => {
@@ -137,7 +78,7 @@ class Algorithm {
             // Check minCount
             if (curr.all > this.config.minCount) {
                 for (let i = 1; i <= this.config.stepsAhead; i++) {
-                    const bodyUp = {
+                    result.push({
                         type: 'up',
                         probability: curr.up[i] / curr.all,
                         commulation: curr.commulate_up[i],
@@ -145,20 +86,7 @@ class Algorithm {
                         count: curr.all,
                         i: i,
                         comb: curr,
-                    }
-                    result.push(bodyUp)
-                    if (!this.config.noDown) {
-                        const bodyDown = {
-                            type: 'down',
-                            probability: curr.down[i] / curr.all,
-                            commulation: curr.commulate_down[i],
-                            commulationPerStep: (curr.commulate_down[i] - 1)/(curr.up[i] * i),
-                            count: curr.all,
-                            comb: curr,
-                            i: i
-                        }
-                        result.push(bodyDown)
-                    }
+                    })
                 }
             }
             return result
@@ -224,7 +152,6 @@ class Algorithm {
             commulationPerStep: type == 'up' ? (comb.commulate_up[i] - 1)/(comb.up[i] * i) : (comb.commulate_down[i] - 1)/(comb.down[i] * i),
             all: comb.all,
             allSteps: type == 'up' ? (comb.up[i] * i) : (comb.down[i] * i),
-            val: [...comb],
             string: comb.string,
             commulate_hist: type == 'up' ? comb.commulate_hist_up[i] : comb.commulate_hist_down[i],
             stepsAhead: i,
@@ -241,44 +168,57 @@ class Algorithm {
         return this.getProfit(start, end) > 1
     }
 
-    processRow(index, isTrain = true) {
-        Object.keys(this.combs).forEach(key => {
-            const c = this.combs[key]
-            if (!this.predicates.some((p, j) => !p.check(c[j], index, this.availableData))) {                
-                if (!c.all) {
-                    this.initCombinationFields(c)
-                } else {
-                    c.all++
+    getCombIds(index) {
+        try {
+            return Combinatorics.cartesianProduct(...this.predicates.map(p => {
+                const ids = p.defineIds(index, this.availableData)
+                if (!ids || !ids.length) {
+                    throw new Error('no id')
                 }
+                return ids
+            })).map(arr => arr.join('-'))
+        } catch (err) {
+            if (err.message === 'no id') {
+                return []
+            }
+            throw err
+        }
+    }
 
-                // check results 
+    processRow(index, isTrain = true) {
+        this.getCombIds(index).forEach(combId => {
+            if (!this.combs[combId]) {
+                this.initCombinationFields(combId)
+            }
 
-                for (let i = 1; i <= this.config.stepsAhead; i++) {
-                    if (this.availableData.length > index + i) {
-                        if (this.isProfitable(index, index + i)) {
-                            c.up[i]++
-                        } else {
-                            c.down[i]++
-                        }
+            const c = this.combs[combId]
+            c.all++
 
-                        const toUp = this.getProfit(index, index + i)
-                        const toDown = 1 / toUp
-
-                        //TODO make hold on strategy
-                        if (c.up_block[i] <= index) {
-                            c.commulate_up[i] = c.commulate_up[i] * toUp
-                            c.commulate_hist_up[i].push(toUp)
-                            c.up_block[i] = index + i
-                        }
-
-                        if (c.down_block[i] <= index) {
-                            c.commulate_down[i] = c.commulate_down[i] * toDown
-                            c.commulate_hist_down[i].push(toDown)
-                            c.up_block[i] = index + i
-                        }
+            for (let i = 1; i <= this.config.stepsAhead; i++) {
+                if (this.availableData.length > index + i) {
+                    if (this.isProfitable(index, index + i)) {
+                        c.up[i]++
                     } else {
-                        console.log()
+                        c.down[i]++
                     }
+
+                    const toUp = this.getProfit(index, index + i)
+                    const toDown = 1 / toUp
+
+                    //TODO make hold on strategy
+                    if (c.up_block[i] <= index) {
+                        c.commulate_up[i] = c.commulate_up[i] * toUp
+                        c.commulate_hist_up[i].push(toUp)
+                        c.up_block[i] = index + i
+                    }
+
+                    if (c.down_block[i] <= index) {
+                        c.commulate_down[i] = c.commulate_down[i] * toDown
+                        c.commulate_hist_down[i].push(toDown)
+                        c.up_block[i] = index + i
+                    }
+                } else {
+                    console.log()
                 }
             }
         })
@@ -289,88 +229,79 @@ class Algorithm {
         }
     }
 
-    hypotesPriority(first, second) {
-        return first.commulationPerStep > second.commulationPerStep
-    }
-
     checkRow(index) {
-        let up = false
-        let down = false
-        let obj
-        let steps
-        try {
-            this.active.forEach(c => {
-                if (!this.predicates.some((p, j) => !p.check(c.val[j], index, this.availableData))) {
-
-                    if (c.type === 'up') {
-                        up = true
-                    } else {
-                        if (this.config.noDown) {
-                            return
-                        }
-                        down = true
-                    }
-
-                    if (up && down) {
-                        throw new Error('collision')
-                    }
-
-                    if (!obj || this.hypotesPriority(c, obj)) {
-                        obj = c
-                        steps = c.stepsAhead
-                    }
-                }
-            })
-        } catch(err) {
-            up = false
-            down = false
+        const hypotes = this.getCombIds(index)
+            .reduce((res, combId) => res.concat(this.active.filter(obj => obj.comb.id === combId)), [])
+            .sort((a, b) => b.commulationPerStep - a.commulationPerStep)[0]
+        if (!hypotes) {
+            return
         }
-
-        const operation = {}
-
-        if (up) {
-            operation.profit = this.getProfit(index, index + steps)
-        } else if (down) {
-            operation.profit = 1/this.getProfit(index, index + steps)
+        const steps = hypotes.stepsAhead
+        const operation = {
+            profit: this.getProfit(index, index + steps),
+            obj: hypotes,
+            steps: steps,
+            from: index,
+            id: hypotes.id,
+            to: index + steps,
         }
-
-        // GET OPERATION BODY
-
-        if (operation.profit) {
-            operation.obj = obj
-            operation.steps = steps
-            operation.from = index
-            operation.id = obj.id
-            operation.to = index + steps
-            this.profit = this.profit * operation.profit
-            this.operations.push(operation)
-            this.nextStepFrom = index + steps
-        }
+        this.profit = this.profit * operation.profit
+        this.operations.push(operation)
+        this.nextStepFrom = index + steps
     }
 
-    initCombinationFields(c) {
-        c.all = 1
-
-        c.up = {}
-        c.up_block = {}
-        c.commulate_up = {}
-        c.commulate_hist_up = {}
-
-        c.down = {}
-        c.down_block = {}
-        c.commulate_down = {}
-        c.commulate_hist_down = {}
-
+    initCombinationFields(combId) {
+        const result = {
+            id: combId,
+            all: 0,
+            up: {},
+            up_block: {},
+            commulate_up: {},
+            commulate_hist_up: {},
+            down: {},
+            down_block: {},
+            commulate_down: {},
+            commulate_hist_down: {},
+        }
         for (let i = 1; i <= this.config.stepsAhead; i++) {
-            c.up[i] = 0
-            c.up_block[i] = 0
-            c.commulate_up[i] = 1
-            c.commulate_hist_up[i] = []
+            result.up[i] = 0
+            result.up_block[i] = 0
+            result.commulate_up[i] = 1
+            result.commulate_hist_up[i] = []
 
-            c.down[i] = 0
-            c.down_block[i] = 0
-            c.commulate_down[i] = 1
-            c.commulate_hist_down[i] = []
+            result.down[i] = 0
+            result.down_block[i] = 0
+            result.commulate_down[i] = 1
+            result.commulate_hist_down[i] = []
+        }
+        this.combs[combId] = result
+    }
+
+    getResultBody() {
+        this.operations.forEach(v => {
+            delete v.obj.comb
+        })
+        return {
+            profit: this.profit,
+            operations: this.operations,
+            config: this.config,
+            combs: Object.keys(this.combs)
+                .sort((a, b) => this.combs[b].all - this.combs[a].all)
+                .slice(0, this.comb_limit)
+                .map(key => {
+                    const v = this.combs[key]
+                    return {
+                        all: v.all,
+                        commulate_down: v.commulate_down,
+                        commulate_hist_down: v.commulate_hist_down,
+                        commulate_hist_up: v.commulate_hist_up,
+                        commulate_up: v.commulate_up,
+                        down: v.down,
+                        string: v.string,
+                        up: v.up,
+                        id: v.id
+                    }
+                })
         }
     }
 }
