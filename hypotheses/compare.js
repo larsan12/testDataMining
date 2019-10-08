@@ -1,48 +1,28 @@
-const Combinatorics = require('js-combinatorics')
+const IPredicate = require('./i-predicate');
 
-const Compare = (field, depth) => {
-    function getString(comb) {
-        return comb.map(v => `(v${v[0]}.${field} > v${v[1]}.${field})`).join(' & ')
+class Compare extends IPredicate {
+    getString(id) {
+        const {field} = this;
+        const result = [];
+        for (let i = 1; i < id.length - 1; i++) {
+            result.push(`(v${id[i-1]}.${field} <= v${id[i]}.${field}) & (v${id[i]}.${field} <= v${id[i+1]}.${field})`)
+        }
+        return result.join(' & ')
     }
 
-    function defineIds(index, data) {
-        if (index - depth + 1 < 0) {
-            return false
-        }
-        const row = data.slice(index - depth + 1, index + 1)
-        // check break
-        // break ставится, если с предыдущими данными есть разрыв
-        if (row.slice(1).some(val => val.break)) {
-            return false
-        }
-
+    defineIds(row) {
+        const {field} = this;
         let id = row.map((val, i) => ({
             temp_id: i,
             val: parseFloat(val[field])
         }))
         .sort((a, b) => a.val - b.val)
-        
-        let ids = [id]
 
-        id.forEach((obj, i) => {
-            if (id[i + 1] && obj.val === id[i + 1].val) {
-                let t = row
-                const newId = [...id]
-                const temp = newId[i + 1]
-                newId[i + 1] = newId[i]
-                newId[i] = temp
-                ids.push(newId)
-            }
-        })
-        
-        ids = ids.map(obj => obj.reduce((res, curr) => res + curr.temp_id, ''))
-
-        return ids
-    }
-
-    return {
-        getString,
-        defineIds,
+        if (id.length > (new Set(id.map(v => v.val))).size) {
+            return []
+        }
+        id = id.reduce((res, curr) => res + curr.temp_id, '')
+        return [id]
     }
 }
 

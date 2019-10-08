@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/sber5min7days.js"
+            "program": "${workspaceFolder}/index.js"
         }
     ]
 }

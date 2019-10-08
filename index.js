@@ -1,86 +1,47 @@
 const fs = require('fs')
 const Algorithm = require('./algorithm')
-const { Ext, Compare } = require('./hypotheses')
+const Compare = require('./hypotheses/compare')
+const View = require('./statistics')
 
 
-function getData() {
-
-    const data = JSON.parse(fs.readFileSync('./data/output.json'))
-    const day = 1000 * 60 * 60 * 24
-
-    /**
-     * 
-     * TODO:
-     * - данные, учесть пропасти между ними в алгоритме
-     */
-
-    function parseData(data) {
-        let newData =[]
-        let lastDate
-        let lastDay
-        Object.keys(data).sort().forEach(k => {
-            if (!lastDate) {
-                lastDate = k
-                newData.push({
-                    ...data[k],
-                    day: 0
-                })
-                lastDay = 0
-            } else {
-                let days = (k - lastDate)/day
-                lastDate = k
-                lastDay = days + lastDay
-                newData.push({
-                    ...data[k],
-                    day: parseInt(lastDay)
-                })
-            }
-        })
-
-        return newData
-    }
-
-    const newData = parseData(data)
-
-    const prices = newData.map(obj => {
-        /*return {
-            day: obj.day,
-            price: obj.exchange.price
-        }*/
-        return {
-            price: obj.exchange.price
-        }
-    })
-
-    return prices
+async function getData() {
+    const res = JSON.parse(fs.readFileSync('./data/sberTrainVol1.json').toString())
+    return res
 }
 
-
 const config = {
-    compareLimit: 6,
-    minCount: 20,
-    minProbality: 0.65,
-    commulateBorder: 0.005,
-    trainVolume: 0.75,
-    stepsAhead: 5,
-    m: 3,
-    commulateBorders: [
+    noDown: true,
+    density: 0.3,
+    minCount: 10,
+    borders: [
         {
-            border: 4,
+            border: 5,
             moreThan: 1
         },
         {
             border: 20,
-            moreThan: 1.01
+            moreThan: 1
         }
-    ]
+    ],
+    trainVolume: 0.2,
+    stepsAhead: 3,
+    comission: 0.00034
 }
 
+getData().then(data => {
 
-const alg = new Algorithm(config, Ext, Compare('price'), getData())
+    const alg = new Algorithm(
+        config, 
+        data, 
+        new Compare('open', 3),
+        new Compare('close', 3),
+    )
 
-const result = alg.processing()
-
-fs.writeFileSync('./data/result3.json', JSON.stringify(result))
-
-console.log()
+    const date = Date.now()
+    const result = alg.processing()
+    result.processingTime = Date.now() - date
+    result.dataLength = data.length
+    View.draw('test', result, data)
+}).catch(err => {
+    console.trace(err)
+})

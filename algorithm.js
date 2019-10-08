@@ -171,7 +171,7 @@ class Algorithm {
     getCombIds(index) {
         try {
             return Combinatorics.cartesianProduct(...this.predicates.map(p => {
-                const ids = p.defineIds(index, this.availableData)
+                const ids = p.getIds(index, this.availableData)
                 if (!ids || !ids.length) {
                     throw new Error('no id')
                 }
@@ -262,6 +262,7 @@ class Algorithm {
             down_block: {},
             commulate_down: {},
             commulate_hist_down: {},
+            string: combId.split('-').map((id, i) => this.predicates[i].getString(id)).join(' & ')
         }
         for (let i = 1; i <= this.config.stepsAhead; i++) {
             result.up[i] = 0
