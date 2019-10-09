@@ -99,7 +99,7 @@ class Algorithm {
             const maxCount = step * this.config.density
             let currCount = 0
             let filteredResult = []
-            while (currCount < maxCount) {
+            while (currCount < maxCount && result.length > 0) {
                 const curr = result.shift()
                 currCount += curr.comb.all
                 filteredResult.push(curr)
