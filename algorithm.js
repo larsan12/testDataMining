@@ -61,12 +61,12 @@ class Algorithm {
         this.profit = 1
         this.operations = []
         this.pushNewData(1)
-        let i = this.availableData.length - this.stepsAhead + 1
+        let i = this.availableData.length - this.stepsAhead
         while (i < this.data.length) {
             if (!this.nextStepFrom || this.nextStepFrom <= i) {
                 this.checkRow(i)
             }
-            this.processRow(i - this.stepsAhead, false)
+            this.processRow(i - this.stepsAhead * 2, false)
             i = this.getNextIndex(i)
         }
     }

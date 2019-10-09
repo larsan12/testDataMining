@@ -9,6 +9,9 @@ class IPredicate {
         if (index - depth + 1 < 0) {
             return false;
         }
+        if (index >= data.length) {
+            throw new Error('index out of available data');
+        }
         const row = data.slice(index - depth + 1, index + 1);
         // check break
         // break ставится, если с предыдущими данными есть разрыв
